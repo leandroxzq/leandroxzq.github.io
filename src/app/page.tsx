@@ -41,7 +41,7 @@ export default function Home() {
 					transition={{ duration: 0.8 }}
 				>
 					{navSocial.map(({ icon, href }, i) => (
-						<a key={i} href={href}>
+						<a key={i} href={href} target="_blank">
 							{icon}
 						</a>
 					))}
