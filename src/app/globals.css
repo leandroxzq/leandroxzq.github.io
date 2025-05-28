@@ -2,20 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+	cursor: url(../assets/images/glasshelp.cur), auto;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+	@apply flex justify-center items-center;
 }
