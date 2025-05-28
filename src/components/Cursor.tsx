@@ -17,10 +17,10 @@ export default function CustomCursor() {
 
 	return (
 		<motion.div
-			className="pointer-events-none fixed top-2 left-2 z-50 w-4 h-4 rounded-full bg-white mix-blend-difference"
+			className="pointer-events-none fixed top-0 left-0 z-50 w-4 h-4 rounded-full bg-white mix-blend-difference"
 			animate={{
-				x: position.x - 16,
-				y: position.y - 16,
+				x: position.x - 8,
+				y: position.y - 8,
 			}}
 			transition={{
 				type: "spring",
