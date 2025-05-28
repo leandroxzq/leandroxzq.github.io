@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 	title: "leandroxzq",
 	description: "personal portfolio page",
 	icons: {
-		icon: ["/favicon.ico"],
+		icon: ["favicon.ico"],
 	},
 }
 
