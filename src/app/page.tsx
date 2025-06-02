@@ -41,7 +41,7 @@ export default function Home() {
 					transition={{ duration: 0.8 }}
 				>
 					{navSocial.map(({ icon, href }, i) => (
-						<a key={i} href={href} target="_blank">
+						<a className="hover:text-yellow-300" key={i} href={href} target="_blank">
 							{icon}
 						</a>
 					))}
@@ -61,18 +61,24 @@ export default function Home() {
 				>
 					Fullstack Developer
 				</motion.p>
+				<motion.p
+					animate={{ opacity: [0, 1, 0] }}
+					transition={{ duration: 2, repeat: Infinity }}
+				>					
+					developing...
+				</motion.p>
 				<nav className="flex gap-6 mt-2">
 					{navItems.map(({ label, href }, i) => (
 						<motion.button
-							key={label}
-							initial={{ opacity: 0, y: 20 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.8, delay: i * 0.3 }}
+						key={label}
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, delay: i * 0.3 }}
 						>
 							<Link
 								href={href}
 								className="text-sm p-2 border-[1px] border-yellow-300 rounded-md hover:bg-white hover:text-black"
-							>
+								>
 								{label}
 							</Link>
 						</motion.button>
