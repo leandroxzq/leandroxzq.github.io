@@ -67,21 +67,22 @@ export default function Home() {
 				>					
 					developing...
 				</motion.p>
-				<nav className="flex gap-6 mt-2">
+				<nav className="flex gap-6 mt-2 flex-col md:flex-row w-full">
 					{navItems.map(({ label, href }, i) => (
-						<motion.button
+						<motion.div
 						key={label}
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: i * 0.3 }}
+						className="w-full md:w-auto"
 						>
 							<Link
 								href={href}
-								className="text-sm p-2 border-[1px] border-yellow-300 rounded-md hover:bg-white hover:text-black"
-								>
+								className="block w-full text-sm p-2 border border-yellow-300 rounded-md text-center hover:bg-white hover:text-black"
+							>
 								{label}
 							</Link>
-						</motion.button>
+						</motion.div>
 					))}
 				</nav>
 			</section>
@@ -91,7 +92,7 @@ export default function Home() {
 				transition={{ duration: 0.7 }}
 			>
 				<Image
-					className="rounded-full"
+					className="rounded-full hidden md:block"
 					src={Avatar}
 					alt="Avatar generated in Playground"
 					draggable="false"
