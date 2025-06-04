@@ -27,3 +27,12 @@ body {
 .center {
 	@apply flex justify-center items-center;
 }
+
+.active-button {
+	@apply active:scale-90 transition duration-150 ease-in-out;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	display: none !important;
+}

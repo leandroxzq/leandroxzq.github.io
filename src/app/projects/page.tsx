@@ -1,3 +1,12 @@
+"use client"
+
+import Nav from "@/components/Nav"
+
 export default function Projects() {
-	return <h1>Projects</h1>
+	return (
+		<main className="md:pt-7 pt-3 select-none min-h-screen">
+			<Nav showBackButton excludeCurrentLink showPathname></Nav>
+			<div className="w-10/12"></div>
+		</main>
+	)
 }
