@@ -4,10 +4,16 @@ import Image from "next/image"
 
 import { Linkedin, Github } from "lucide-react"
 import { motion } from "framer-motion"
+import { Ubuntu } from "next/font/google"
 import { Press_Start_2P } from "next/font/google"
 
 import Nav from "@/components/Nav"
 import Avatar from "@/assets/images/avatar.png"
+
+const UbuntuText = Ubuntu({
+	subsets: ["latin"],
+	weight: "700",
+})
 
 const pressStart2P = Press_Start_2P({
 	subsets: ["latin"],
@@ -46,7 +52,7 @@ export default function Home() {
 					))}
 				</motion.nav>
 				<motion.h2
-					className="text-4xl"
+					className={`text-5xl tracking-wider ${UbuntuText.className}`}
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
@@ -66,7 +72,7 @@ export default function Home() {
 				initial={{ opacity: 0, x: 20 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.7 }}
-				className="rounded-full md:w-80 md:h-80 overflow-hidden hidden md:block"
+				className="rounded-full md:w-80 md:h-80 overflow-hidden hidden md:block border-4 border-white"
 			>
 				<Image
 					className=""
