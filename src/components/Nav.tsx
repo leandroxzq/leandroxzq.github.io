@@ -68,7 +68,7 @@ export default function Nav({
 					>
 						<Link
 							href={href}
-							className="block w-full max-w-56 mx-auto text-sm p-2 border border-yellow-300 rounded-md text-center 
+							className="block w-full text-sm p-2 border border-yellow-300 rounded-md text-center 
 												hover:bg-white hover:text-black active-button"
 						>
 							{label}
