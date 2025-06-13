@@ -53,7 +53,14 @@ const stacks = [
 export default function Stacks() {
 	return (
 		<>
-			<h1 className="text-center">Skills</h1>
+			<motion.h2
+				initial={{ opacity: 0, y: -20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8 }}
+				className="text-center"
+			>
+				Skills
+			</motion.h2>
 			<motion.div
 				className="w-full relative rounded-lg"
 				initial={{ opacity: 0, x: -20 }}
