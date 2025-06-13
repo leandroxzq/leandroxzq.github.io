@@ -10,7 +10,7 @@ const pressStart2P = Press_Start_2P({
 })
 
 const navItems = [
-	{ label: "Stacks", href: "/stacks" },
+	{ label: "About", href: "/about" },
 	{ label: "Projects", href: "/projects" },
 	{ label: "Blog", href: "/blog" },
 ]
