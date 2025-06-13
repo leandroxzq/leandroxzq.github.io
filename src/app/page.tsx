@@ -22,7 +22,7 @@ const pressStart2P = Press_Start_2P({
 
 export default function Home() {
 	return (
-		<article className="center gap-6 select-none min-h-screen">
+		<article className="center gap-6 select-none min-h-dvh">
 			<div className="flex md:flex-row flex-col gap-4">
 				<section
 					className={`order-2 md:order-1 flex flex-col justify-evenly gap-4 select-text max-w-80 ${pressStart2P.className}`}
@@ -30,7 +30,7 @@ export default function Home() {
 					<Stacks />
 					<Nav />
 				</section>
-				<section className="order-1 md:order-2  flex flex-col items-center gap-2">
+				<section className="order-1 md:order-2 flex flex-col items-center gap-2">
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
 						animate={{ opacity: 1, x: 0 }}
