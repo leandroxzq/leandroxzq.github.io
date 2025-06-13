@@ -35,7 +35,7 @@ export default function Home() {
 						initial={{ opacity: 0, x: 20 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.7 }}
-						className="relative rounded-full md:w-64 md:h-64 overflow-hidden hidden md:block border-4 border-white"
+						className="box-shad relative rounded-full md:w-64 md:h-64 overflow-hidden hidden md:block border-4 border-white"
 					>
 						<Image
 							className=""
