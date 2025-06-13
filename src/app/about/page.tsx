@@ -16,7 +16,11 @@ export default function About() {
 	return (
 		<Page>
 			<div className="space-y-8">
-				<section className="relative dark:bg-gray-900 p-6 rounded-lg shadow-md overflow-hidden">
+				<motion.section
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					className="relative dark:bg-gray-900 p-6 rounded-lg shadow-md overflow-hidden"
+				>
 					<RotatingLines />
 					<div className="relative z-10">
 						<h3
@@ -26,9 +30,14 @@ export default function About() {
 						</h3>
 						<p className="leading-relaxed">About me</p>
 					</div>
-				</section>
+				</motion.section>
 
-				<section className="relative bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md overflow-hidden">
+				<motion.section
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.3 }}
+					className="relative bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md overflow-hidden"
+				>
 					<RotatingLines />
 					<div className="relative z-10">
 						<h3
@@ -62,7 +71,7 @@ export default function About() {
 							</p>
 						</div>
 					</div>
-				</section>
+				</motion.section>
 			</div>
 		</Page>
 	)
