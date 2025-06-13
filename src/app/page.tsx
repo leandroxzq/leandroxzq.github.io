@@ -25,7 +25,7 @@ export default function Home() {
 		<article className="center gap-6 select-none min-h-screen">
 			<div className="flex md:flex-row flex-col gap-4">
 				<section
-					className={`order-2 md:order-1 flex flex-col justify-evenly gap-4 select-text max-w-72 ${pressStart2P.className}`}
+					className={`order-2 md:order-1 flex flex-col justify-evenly gap-4 select-text max-w-80 ${pressStart2P.className}`}
 				>
 					<Stacks />
 					<Nav />
