@@ -1,4 +1,5 @@
-import { motion } from "framer-motion"
+import RotatingLines from "@/components/RotatingLines"
+
 import {
 	FaReact,
 	FaNodeJs,
@@ -22,32 +23,38 @@ import {
 
 import { BiLogoPostgresql } from "react-icons/bi"
 
+import { motion } from "framer-motion"
+import { Tooltip } from "@mantine/core"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay } from "swiper/modules"
-
-import RotatingLines from "@/components/RotatingLines"
-
 const stacks = [
-	{ icon: <FaJs style={{ color: "#f0db4f" }} /> },
-	{ icon: <SiTypescript style={{ color: "#3178c6" }} /> },
-	{ icon: <FaNodeJs style={{ color: "#68a063" }} /> },
-	{ icon: <FaHtml5 style={{ color: "#e34c26" }} /> },
-	{ icon: <FaCss3Alt style={{ color: "#264de4" }} /> },
-	{ icon: <SiNextdotjs style={{ color: "#ffffff" }} /> },
-	{ icon: <FaReact style={{ color: "#61DBFB" }} /> },
-	{ icon: <SiJest style={{ color: "#99425b" }} /> },
-	{ icon: <SiBootstrap style={{ color: "#7952B3" }} /> },
-	{ icon: <SiTailwindcss style={{ color: "#38bdf8" }} /> },
-	{ icon: <SiSass style={{ color: "#cd6799" }} /> },
-	{ icon: <SiMui style={{ color: "#007FFF" }} /> },
-	{ icon: <BiLogoPostgresql style={{ color: "#336791" }} /> },
-	{ icon: <SiMysql style={{ color: "#00758F" }} /> },
-	{ icon: <SiMongodb style={{ color: "#4DB33D" }} /> },
-	{ icon: <FaGitAlt style={{ color: "#f1502f" }} /> },
+	{ icon: <FaJs style={{ color: "#f0db4f" }} />, desc: "JavaScript" },
+	{ icon: <SiTypescript style={{ color: "#3178c6" }} />, desc: "TypeScript" },
+	{ icon: <FaNodeJs style={{ color: "#68a063" }} />, desc: "Node.js" },
+	{ icon: <FaHtml5 style={{ color: "#e34c26" }} />, desc: "HTML5" },
+	{ icon: <FaCss3Alt style={{ color: "#264de4" }} />, desc: "CSS3" },
+	{ icon: <SiNextdotjs style={{ color: "#ffffff" }} />, desc: "Next.js" },
+	{ icon: <FaReact style={{ color: "#61DBFB" }} />, desc: "React" },
+	{ icon: <SiJest style={{ color: "#99425b" }} />, desc: "Jest" },
+	{ icon: <SiBootstrap style={{ color: "#7952B3" }} />, desc: "Bootstrap" },
+	{
+		icon: <SiTailwindcss style={{ color: "#38bdf8" }} />,
+		desc: "TailwindCSS",
+	},
+	{ icon: <SiSass style={{ color: "#cd6799" }} />, desc: "Sass" },
+	{ icon: <SiMui style={{ color: "#007FFF" }} />, desc: "MaterialUI" },
+	{
+		icon: <BiLogoPostgresql style={{ color: "#336791" }} />,
+		desc: "PostgreSQL",
+	},
+	{ icon: <SiMysql style={{ color: "#00758F" }} />, desc: "MySQL" },
+	{ icon: <SiMongodb style={{ color: "#4DB33D" }} />, desc: "MongoDB" },
+	{ icon: <FaGitAlt style={{ color: "#f1502f" }} />, desc: "Git" },
 ]
 
 export default function Stacks() {
@@ -93,9 +100,18 @@ export default function Stacks() {
 					{stacks.map((stack, index) => (
 						<SwiperSlide key={index}>
 							<div className="center h-full w-full p-3">
-								<div className="center text-4xl box-shad w-16 h-16 transition-transform duration-500">
-									{stack.icon}
-								</div>
+								<Tooltip
+									arrowOffset={10}
+									arrowSize={10}
+									offset={{ mainAxis: 0, crossAxis: 0 }}
+									label={<span className="font-bold">{stack.desc}</span>}
+									color="yellow"
+									withArrow
+								>
+									<div className="center text-4xl box-shad w-16 h-16 transition-transform duration-500">
+										{stack.icon}
+									</div>
+								</Tooltip>
 							</div>
 						</SwiperSlide>
 					))}
