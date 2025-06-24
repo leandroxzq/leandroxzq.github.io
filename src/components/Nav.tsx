@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Cog } from "lucide-react"
 import { Press_Start_2P } from "next/font/google"
 
 const pressStart2P = Press_Start_2P({
@@ -32,7 +32,9 @@ export default function Nav({
 
 	return (
 		<nav
-			className={`${pressStart2P.className} flex flex-col items-center gap-4 ${
+			className={`${
+				pressStart2P.className
+			} flex flex-col items-center gap-4 ${
 				isindex ? "w-full" : " w-2/12"
 			}`}
 		>
@@ -66,13 +68,37 @@ export default function Nav({
 						transition={{ duration: 0.8, delay: i * 0.3 }}
 						className="w-full"
 					>
-						<Link
-							href={href}
-							className="block w-full text-sm p-2 border border-yellow-300 rounded-md text-center 
-												hover:bg-white hover:text-black active-button"
+						<div
+							className={`w-full center text-sm p-2 border rounded-md text-center ${
+								href === "/blog"
+									? "border-gray-400 text-gray-400 opacity-50 cursor-not-allowed"
+									: "border-yellow-300 hover:bg-white hover:text-black active-button"
+							}`}
 						>
-							{label}
-						</Link>
+							{href === "/blog" ? (
+								<div
+									className="center gap-2"
+									aria-disabled="true"
+								>
+									{label}
+									<motion.div
+										initial={{ rotate: 0 }}
+										animate={{ rotate: 180 }}
+										transition={{
+											duration: 5,
+											repeat: Infinity,
+											ease: "linear",
+										}}
+									>
+										<Cog />
+									</motion.div>
+								</div>
+							) : (
+								<Link href={href} className="center gap-2">
+									{label}
+								</Link>
+							)}
+						</div>
 					</motion.div>
 				))}
 		</nav>
