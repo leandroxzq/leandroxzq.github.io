@@ -35,11 +35,11 @@ export default function Nav({
 			className={`${
 				pressStart2P.className
 			} flex flex-col items-center gap-4 ${
-				isindex ? "w-full" : " w-2/12"
+				isindex ? "w-full" : "w-full sm:w-2/12"
 			}`}
 		>
 			{showBackButton && showPathname && (
-				<div className="flex justify-between items-center w-full">
+				<div className="flex justify-between items-center w-full gap-2 sm:gap-4">
 					<Link
 						href="/"
 						aria-label="Voltar para a home"
