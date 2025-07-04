@@ -64,7 +64,10 @@ export default function Nav({
           >
             <Link legacyBehavior href={href} className={`min-w-full`}>
               {href === '/blog' ? (
-                <div className="center gap-2 cursor-not-allowed text-sm rounded-md p-3 border-2 border-gray-400 text-gray-400 opacity-50">
+                <div
+                  className="center gap-2 cursor-not-allowed text-sm rounded-md p-3 border-2 border-gray-400 text-gray-400 opacity-50"
+                  onClick={(e) => e.preventDefault()}
+                >
                   {label}
                   <motion.div
                     initial={{ rotate: 0 }}
