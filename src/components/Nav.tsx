@@ -43,7 +43,7 @@ export default function Nav({
 					<Link
 						href="/"
 						aria-label="Voltar para a home"
-						className="hover:text-yellow-300 self-start active:scale-95 transition ease-in-out"
+						className="hover:text-yellow-300"
 					>
 						<ArrowLeft size={32} />
 					</Link>
@@ -68,20 +68,16 @@ export default function Nav({
 						transition={{ duration: 0.8, delay: i * 0.3 }}
 						className="w-full"
 					>
-						<div
-							className={`w-full center text-sm p-2 border rounded-md text-center ${
-								href === "/blog"
-									? "border-gray-400 text-gray-400 opacity-50 cursor-not-allowed"
-									: "border-yellow-300 hover:bg-white hover:text-black active-button"
-							}`}
+						<Link legacyBehavior
+							href={href}
+							className={`min-w-full`} 							
 						>
 							{href === "/blog" ? (
 								<div
-									className="center gap-2"
-									aria-disabled="true"
+									className="center gap-2 cursor-not-allowed text-sm rounded-md p-3 border-2 border-gray-400 text-gray-400 opacity-50"									
 								>
 									{label}
-									<motion.div
+									<motion.div									
 										initial={{ rotate: 0 }}
 										animate={{ rotate: 180 }}
 										transition={{
@@ -93,12 +89,10 @@ export default function Nav({
 										<Cog />
 									</motion.div>
 								</div>
-							) : (
-								<Link href={href} className="center gap-2">
-									{label}
-								</Link>
+							) : (								
+								<span className="w-full center text-sm rounded-md text-center p-3 border-2 border-yellow-300 hover:bg-yellow-300 hover:text-black">{label}</span>								
 							)}
-						</div>
+						</Link>
 					</motion.div>
 				))}
 		</nav>
