@@ -2,52 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-scroll {
+  --sb-track-color: #424231;
+  --sb-thumb-color: #899432;
+  --sb-size: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 4px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
 * {
-	cursor: url(../assets/images/glasshelp.cur), auto;
+  cursor: url(../assets/images/glasshelp.cur), auto;
 }
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-	color: var(--foreground);
-	background: var(--background);
-	font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .center {
-	@apply flex justify-center items-center;
+  @apply flex justify-center items-center;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-	display: none !important;
+  display: none !important;
 }
 
 .swiper {
-	border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .swiper:hover .box-shad {
-	filter: saturate(10%);
-	transform: scale(0.8);
+  filter: saturate(10%);
+  transform: scale(0.8);
 }
 
 .swiper .box-shad:hover {
-	transform: scale(1.3);
-	filter: saturate(100%);
-	filter: drop-shadow(0px 3px 10px #fddf4775);
+  transform: scale(1.3);
+  filter: saturate(100%);
+  filter: drop-shadow(0px 3px 10px #fddf4775);
 }
 
 .box-shad {
-	filter: drop-shadow(0px 3px 10px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0px 3px 10px rgba(255, 255, 255, 0.5));
 }
