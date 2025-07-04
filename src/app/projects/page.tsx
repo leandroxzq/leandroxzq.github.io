@@ -1,45 +1,36 @@
-"use client";
+'use client'
 
-import Page from "@/components/Page";
-import RotatingLines from "@/components/RotatingLines";
-import { Carousel } from "@mantine/carousel";
-import { Image } from "@mantine/core";
+import Page from '@/components/Page'
+import RotatingLines from '@/components/RotatingLines'
+import { Carousel } from '@mantine/carousel'
+import { Image } from '@mantine/core'
 
 const projects = [
   {
     id: 1,
-    name: "Bamboo 🎋",
+    name: 'Bamboo 🎋',
     description:
-      "Plataforma voltada para a gestão de agendamentos, postagens e horários com uma psicóloga. foi desenvolvido como parte da disciplina de Engenharia de Software, sob requisito do professor e com foco na comunidade do campus IFPE.",
-    repo_url: "https://github.com/leandroxzq/bamboo",
-    tec: [
-      "React",
-      "JavaScript",
-      "Material UI",
-      "SCSS",
-      "Node.js",
-      "Express",
-      "MySQL",
-      "JWT",
-    ],
+      'Plataforma voltada para a gestão de agendamentos, postagens e horários com uma psicóloga. foi desenvolvido como parte da disciplina de Engenharia de Software, sob requisito do professor e com foco na comunidade do campus IFPE.',
+    repo_url: 'https://github.com/leandroxzq/bamboo',
+    tec: ['React', 'JavaScript', 'Material UI', 'SCSS', 'Node.js', 'Express', 'MySQL', 'JWT'],
     img: [
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
+      'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png',
+      'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png',
     ],
   },
   {
     id: 2,
-    name: "Furiabot 🖤",
+    name: 'Furiabot 🖤',
     description:
-      "Aplicação desenvolvida como proposta para o Desafio #1: Experiência Conversacional da FURIA. O projeto combina um chatbot inteligente, chat em tempo real entre fãs e informações atualizadas do time de CS da FURIA.",
-    repo_url: "https://github.com/leandroxzq/desafio-furia",
-    tec: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
+      'Aplicação desenvolvida como proposta para o Desafio #1: Experiência Conversacional da FURIA. O projeto combina um chatbot inteligente, chat em tempo real entre fãs e informações atualizadas do time de CS da FURIA.',
+    repo_url: 'https://github.com/leandroxzq/desafio-furia',
+    tec: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase'],
     img: [
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png",
-      "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png",
+      'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png',
+      'https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png',
     ],
   },
-];
+]
 
 export default function Projects() {
   return (
@@ -50,10 +41,7 @@ export default function Projects() {
             .slice()
             .reverse()
             .map(({ id, name, description, repo_url, tec, img }) => (
-              <div
-                key={id}
-                className="relative rounded-sm bg-gray-900 text-white"
-              >
+              <div key={id} className="relative rounded-sm bg-gray-900 text-white">
                 <div className="relative w-full">
                   <Carousel
                     withIndicators
@@ -61,7 +49,7 @@ export default function Projects() {
                     emblaOptions={{
                       loop: true,
                       dragFree: false,
-                      align: "center",
+                      align: 'center',
                     }}
                   >
                     {img.map((url) => (
@@ -106,5 +94,5 @@ export default function Projects() {
         </div>
       </div>
     </Page>
-  );
+  )
 }
