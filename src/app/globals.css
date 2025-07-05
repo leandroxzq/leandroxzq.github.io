@@ -76,6 +76,16 @@ body {
   color: transparent;
 }
 
+.indicator {
+  width: 12px;
+  height: 4px;
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: 40px;
+  }
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   display: none !important;

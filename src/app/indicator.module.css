@@ -1,0 +1,10 @@
+.indicator {
+  width: 18px;
+  height: 8px;
+  background-color: white;
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: 40px;
+  }
+}

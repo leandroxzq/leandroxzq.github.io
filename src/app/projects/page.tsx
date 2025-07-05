@@ -2,13 +2,23 @@
 
 import ContainerMotion from '@/components/ContainerMotion'
 import Page from '@/components/Page'
+import classes from '@/app/indicator.module.css'
+
+import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react'
 import { Carousel } from '@mantine/carousel'
 import { Image } from '@mantine/core'
+
+import { Press_Start_2P } from 'next/font/google'
+
+const pressStart2P = Press_Start_2P({
+  subsets: ['latin'],
+  weight: '400',
+})
 
 const projects = [
   {
     id: 1,
-    name: 'Bamboo 🎋',
+    name: 'Bamboo🎋',
     description:
       'Plataforma voltada para a gestão de agendamentos, postagens e horários com uma psicóloga. foi desenvolvido como parte da disciplina de Engenharia de Software, sob requisito do professor e com foco na comunidade do campus IFPE.',
     repo_url: 'https://github.com/leandroxzq/bamboo',
@@ -20,7 +30,7 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Furiabot 🖤',
+    name: 'Furiabot🖤',
     description:
       'Aplicação desenvolvida como proposta para o Desafio #1: Experiência Conversacional da FURIA. O projeto combina um chatbot inteligente, chat em tempo real entre fãs e informações atualizadas do time de CS da FURIA.',
     repo_url: 'https://github.com/leandroxzq/desafio-furia',
@@ -40,8 +50,15 @@ export default function Projects() {
           <ContainerMotion>
             <div className="relative w-full">
               <Carousel
+                classNames={classes}
                 withIndicators
-                height={300}
+                height={250}
+                nextControlIcon={
+                  <IconArrowRight size={32} className="text-black bg-white p-1 rounded-full" />
+                }
+                previousControlIcon={
+                  <IconArrowLeft size={32} className="text-black bg-white p-1 rounded-full" />
+                }
                 emblaOptions={{
                   loop: true,
                   dragFree: false,
@@ -54,15 +71,15 @@ export default function Projects() {
                       src={url}
                       alt={`${name} screenshot`}
                       width={800}
-                      height={300}
+                      height={250}
                       className="w-full h-[300px] object-cover rounded-md"
                     />
                   </Carousel.Slide>
                 ))}
               </Carousel>
             </div>
-            <div className="p-4 space-y-6">
-              <h2 className="text-xl font-bold">{name}</h2>
+            <div className="pt-4 space-y-4">
+              <h2 className={`text-xl font-bold ${pressStart2P.className}`}>{name}</h2>
               <p className="text-sm mb-2">{description}</p>
               <a
                 href={repo_url}
