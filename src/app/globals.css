@@ -63,6 +63,10 @@ body {
   );
 }
 
+.bg-gradient-light:hover {
+  background: linear-gradient(45deg, #feffb1 0%, #ccbf4d 49%, #ffe600 100%);
+}
+
 .gradient-text {
   background: linear-gradient(
     173deg,
