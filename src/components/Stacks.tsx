@@ -25,6 +25,13 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+import { Press_Start_2P } from 'next/font/google'
+
+const pressStart2P = Press_Start_2P({
+  subsets: ['latin'],
+  weight: '400',
+})
+
 const stacks = [
   { icon: <FaJs style={{ color: '#f0db4f' }} />, desc: 'JavaScript' },
   { icon: <SiTypescript style={{ color: '#3178c6' }} />, desc: 'TypeScript' },
@@ -95,11 +102,27 @@ export default function Stacks() {
               <div className="center h-full w-full p-3">
                 <Tooltip
                   arrowOffset={10}
-                  arrowSize={10}
+                  arrowSize={8}
                   offset={{ mainAxis: 0, crossAxis: 0 }}
-                  label={<span className="font-bold">{stack.desc}</span>}
-                  color="yellow"
                   withArrow
+                  label={
+                    <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
+                      {stack.desc}
+                    </span>
+                  }
+                  styles={{
+                    tooltip: {
+                      background: 'linear-gradient(124deg, #ffffff 0%, #afa442 49%, #ffe600 100%)',
+                      color: '#000',
+                      borderRadius: 8,
+                      padding: '8px 12px',
+                    },
+                    arrow: {
+                      filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.2))',
+                      background: 'inherit',
+                      backgroundClip: 'padding-box',
+                    },
+                  }}
                 >
                   <div className="center text-4xl box-shad w-16 h-16 transition-transform duration-500">
                     {stack.icon}

@@ -46,7 +46,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.h2
-            className={`text-4xl tracking-wider ${UbuntuText.className}`}
+            className={`text-4xl tracking-wider ${UbuntuText.className} gradient-text`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ export default function Home() {
             Leandroxzq
           </motion.h2>
           <motion.p
-            className={`${pressStart2P.className}`}
+            className={`${pressStart2P.className} gradient-text`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

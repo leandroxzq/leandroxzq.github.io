@@ -54,6 +54,19 @@ body {
   @apply flex justify-center items-center;
 }
 
+.gradient-text {
+  background: linear-gradient(
+    175deg,
+    rgb(253, 224, 71) 10%,
+    rgb(196, 185, 87) 20%,
+    rgb(255, 255, 255) 70%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   display: none !important;
