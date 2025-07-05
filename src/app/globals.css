@@ -28,10 +28,6 @@
   }
 }
 
-* {
-  cursor: url(../assets/images/glasshelp.cur), auto;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;

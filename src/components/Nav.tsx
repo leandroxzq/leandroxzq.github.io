@@ -82,7 +82,7 @@ export default function Nav({
                   </motion.div>
                 </div>
               ) : (
-                <span className="w-full center text-sm rounded-md text-center p-3 border-2 border-yellow-300 bg-gradient-light hover:text-black">
+                <span className="w-full center text-sm rounded-md cursor-pointer text-center p-3 border-2 border-yellow-300 bg-gradient-light hover:text-black">
                   {label}
                 </span>
               )}

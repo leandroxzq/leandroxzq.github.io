@@ -124,7 +124,7 @@ export default function Stacks() {
                     },
                   }}
                 >
-                  <div className="center text-4xl box-shad w-16 h-16 transition-transform duration-500">
+                  <div className="center text-4xl cursor-grab box-shad w-16 h-16 transition-transform duration-500">
                     {stack.icon}
                   </div>
                 </Tooltip>
