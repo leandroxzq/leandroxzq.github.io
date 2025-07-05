@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
-import Cursor from '@/components/Cursor'
 import Hero from '@/components/Hero'
 
 import { MantineProvider } from '@mantine/core'
@@ -36,10 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <MantineProvider>
-          <Hero>
-            <Cursor />
-            {children}
-          </Hero>
+          <Hero>{children}</Hero>
         </MantineProvider>
       </body>
     </html>
