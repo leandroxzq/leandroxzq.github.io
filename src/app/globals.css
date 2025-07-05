@@ -54,12 +54,21 @@ body {
   @apply flex justify-center items-center;
 }
 
+.bg-gradient {
+  background: linear-gradient(
+    173deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(17, 24, 39, 1) 48%,
+    rgb(20, 29, 61) 99%
+  );
+}
+
 .gradient-text {
   background: linear-gradient(
-    175deg,
-    rgb(253, 224, 71) 10%,
-    rgb(196, 185, 87) 20%,
-    rgb(255, 255, 255) 70%
+    173deg,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(204, 190, 33, 1) 68%,
+    rgba(140, 126, 0, 1) 93%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
