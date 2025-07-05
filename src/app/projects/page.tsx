@@ -1,7 +1,7 @@
 'use client'
 
+import ContainerMotion from '@/components/ContainerMotion'
 import Page from '@/components/Page'
-import RotatingLines from '@/components/RotatingLines'
 import { Carousel } from '@mantine/carousel'
 import { Image } from '@mantine/core'
 
@@ -35,11 +35,9 @@ const projects = [
 export default function Projects() {
   return (
     <Page>
-      {projects
-        .slice()
-        .reverse()
-        .map(({ id, name, description, repo_url, tec, img }) => (
-          <div key={id} className="relative rounded-lg bg-gray-900 text-white">
+      {projects.reverse().map(({ id, name, description, repo_url, tec, img }) => (
+        <div key={id} className="">
+          <ContainerMotion>
             <div className="relative w-full">
               <Carousel
                 withIndicators
@@ -86,9 +84,9 @@ export default function Projects() {
                 ))}
               </ul>
             </div>
-            <RotatingLines />
-          </div>
-        ))}
+          </ContainerMotion>
+        </div>
+      ))}
     </Page>
   )
 }
