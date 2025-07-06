@@ -4,16 +4,12 @@ import { usePathname } from 'next/navigation'
 import { ArrowLeft, Cog } from 'lucide-react'
 import { Press_Start_2P } from 'next/font/google'
 
+import { useLanguage } from '@/context/LanguageContext'
+
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
   weight: '400',
 })
-
-const navItems = [
-  { label: 'About', href: '/about' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Blog', href: '/blog' },
-]
 
 interface NavProps {
   showBackButton?: boolean
@@ -27,6 +23,13 @@ export default function Nav({
   showPathname = false,
 }: NavProps) {
   const pathname = usePathname()
+  const { content } = useLanguage()
+
+  const navItems = [
+    { label: content.nav.about, href: '/about' },
+    { label: content.nav.projects, href: '/projects' },
+    { label: 'Blog', href: '/blog' },
+  ]
 
   const isindex = pathname === '/'
 

@@ -1,4 +1,5 @@
 import RotatingLines from '@/components/RotatingLines'
+import { useLanguage } from '@/context/LanguageContext'
 
 import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa'
 
@@ -58,6 +59,8 @@ const stacks = [
 ]
 
 export default function Stacks() {
+  const { content } = useLanguage()
+
   return (
     <>
       <motion.h2
@@ -66,7 +69,7 @@ export default function Stacks() {
         transition={{ duration: 0.8 }}
         className="text-center"
       >
-        Skills
+        {content.stacks.title}
       </motion.h2>
       <motion.div
         className="w-full relative rounded-lg"

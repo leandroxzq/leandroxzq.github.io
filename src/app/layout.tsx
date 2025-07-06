@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
 import Hero from '@/components/Hero'
+import { LanguageProvider } from '@/context/LanguageContext'
 
 import { MantineProvider } from '@mantine/core'
 import '@mantine/core/styles.css'
@@ -35,7 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased select-text`}>
         <MantineProvider>
-          <Hero>{children}</Hero>
+          <LanguageProvider>
+            <Hero>{children}</Hero>
+          </LanguageProvider>
         </MantineProvider>
       </body>
     </html>

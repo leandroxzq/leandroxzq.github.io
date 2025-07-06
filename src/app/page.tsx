@@ -9,6 +9,8 @@ import { Press_Start_2P } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Stacks from '@/components/Stacks'
 import Avatar from '@/assets/images/avatar.png'
+import ButtonLanguage from '@/components/ButtonLanguague'
+import { useLanguage } from '@/context/LanguageContext'
 
 const UbuntuText = Ubuntu({
   subsets: ['latin'],
@@ -21,6 +23,8 @@ const pressStart2P = Press_Start_2P({
 })
 
 export default function Home() {
+  const { content } = useLanguage()
+
   return (
     <article className="center gap-6 select-none min-h-dvh">
       <div className="flex md:flex-row flex-col gap-4">
@@ -29,6 +33,7 @@ export default function Home() {
         >
           <Stacks />
           <Nav />
+          <ButtonLanguage />
         </section>
         <section className="order-1 md:order-2 flex flex-col items-center gap-2">
           <motion.div
@@ -54,12 +59,12 @@ export default function Home() {
             Leandroxzq
           </motion.h2>
           <motion.p
-            className={`${pressStart2P.className} gradient-text`}
+            className={`${pressStart2P.className} gradient-text max-w-72 text-center`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Fullstack Developer
+            {content.home.role}
           </motion.p>
         </section>
       </div>
