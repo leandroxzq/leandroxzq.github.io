@@ -32,11 +32,11 @@ export default function Projects() {
       {data.reverse().map((p) => (
         <div key={p.id} className="">
           <ContainerMotion>
-            <div className="relative w-full">
+            <div className="w-full">
               <Carousel
                 classNames={classes}
                 withIndicators
-                height={250}
+                height={300}
                 nextControlIcon={
                   <IconArrowRight size={32} className="text-black bg-white p-1 rounded-full" />
                 }
@@ -54,29 +54,28 @@ export default function Projects() {
                     <Image
                       src={url}
                       alt={`${p.name} screenshot`}
-                      width={800}
-                      height={250}
-                      className="w-full h-[300px] object-cover rounded-md"
+                      height={300}
+                      className="w-full object-fill rounded-md"
                     />
                   </Carousel.Slide>
                 ))}
               </Carousel>
             </div>
             <div className="pt-4 space-y-4">
-              <div>
+              <div className="flex items-center gap-2">
                 <h2 className={`text-xl font-bold ${pressStart2P.className}`}>{p.name}</h2>
                 <a
                   href={p.repo_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 underline hover:text-blue-600 transition-colors"
+                  className=" text-sm text-blue-400 underline hover:text-blue-600 transition-colors"
                 >
                   {content.projects.repository}
                 </a>
               </div>
-              <p className="text-sm mb-2">{p.description}</p>
+              <p className="text-lg mb-2">{p.description}</p>
 
-              <p className="text-sm mt-2">{content.projects.tech}</p>
+              <p className="text-base mt-2">{content.projects.tech}</p>
               <ul>
                 {p.tec.map((tec) => (
                   <li
