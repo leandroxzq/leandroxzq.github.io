@@ -52,7 +52,7 @@ export default function Projects() {
                       src={url}
                       alt={`${p.name} screenshot`}
                       height={300}
-                      className={`w-full object-fill rounded-md ${p.img.length > 1 ? 'cursor-grab' : ''}`}
+                      className={`w-full object-center h-[300px] rounded-md ${p.img.length > 1 ? 'cursor-grab' : ''}`}
                     />
                   </Carousel.Slide>
                 ))}
@@ -73,11 +73,11 @@ export default function Projects() {
               <p className="text-lg mb-2">{p.description}</p>
 
               <p className="text-base mt-2">{content.projects.tech}</p>
-              <ul>
+              <ul className="flex flex-wrap gap-2">
                 {p.tec.map((tec) => (
                   <li
                     key={tec}
-                    className="inline-block font-bold mr-2 p-2 border-2 border-gray-800 text-sm text-gray-400 transition-colors hover:bg-white hover:text-black rounded-lg"
+                    className="inline-block font-bold p-2 border-2 border-gray-800 text-sm text-gray-400 transition-colors hover:bg-white hover:text-black rounded-lg"
                   >
                     {tec}
                   </li>
