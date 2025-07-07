@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
-import { ArrowLeft, Cog } from 'lucide-react'
 import { Press_Start_2P } from 'next/font/google'
+import { IconArrowLeft, IconCodeCircle2Filled } from '@tabler/icons-react'
 
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -42,7 +42,7 @@ export default function Nav({
       {showBackButton && showPathname && (
         <div className="flex justify-between items-center w-full gap-2 sm:gap-4">
           <Link href="/" aria-label="Voltar para a home" className="hover:text-yellow-300">
-            <ArrowLeft size={32} />
+            <IconArrowLeft size={32} />
           </Link>
           <motion.p
             initial={{ opacity: 0 }}
@@ -81,7 +81,7 @@ export default function Nav({
                       ease: 'linear',
                     }}
                   >
-                    <Cog />
+                    <IconCodeCircle2Filled />
                   </motion.div>
                 </div>
               ) : (
