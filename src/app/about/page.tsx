@@ -2,6 +2,7 @@
 
 import Page from '@/components/Page'
 import ContainerMotion from '@/components/ContainerMotion'
+import { useLanguage } from '@/context/LanguageContext'
 
 import { Press_Start_2P } from 'next/font/google'
 import { IconBrandGithub, IconBrandLinkedin, IconMailFast } from '@tabler/icons-react'
@@ -30,19 +31,21 @@ const Links = [
 ]
 
 export default function About() {
+  const { content } = useLanguage()
+
   return (
     <Page>
       <ContainerMotion>
-        <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>About Me</h3>
-        <p className="leading-relaxed">
-          My name is Leandro, and I am currently studying Systems Analysis and Development at IFPE.
-          I am dedicated, focused on continuous learning, with the goal of working as a fullstack
-          professional.
-        </p>
+        <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
+          {content.about.title}
+        </h3>
+        <p className="leading-relaxed">{content.about.description}</p>
       </ContainerMotion>
 
       <ContainerMotion delay={0.3}>
-        <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>Contact</h3>
+        <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
+          {content.about.contact}
+        </h3>
 
         {Links.map((link, index) =>
           link.href ? (
