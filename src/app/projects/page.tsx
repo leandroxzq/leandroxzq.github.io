@@ -2,7 +2,7 @@
 
 import ContainerMotion from '@/components/ContainerMotion'
 import Page from '@/components/Page'
-import classes from '@/app/indicator.module.css'
+import classes from '@/styles/indicator.module.css'
 
 import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react'
 import { Carousel } from '@mantine/carousel'
