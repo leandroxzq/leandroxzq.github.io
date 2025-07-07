@@ -2,11 +2,9 @@
 
 import ContainerMotion from '@/components/ContainerMotion'
 import Page from '@/components/Page'
-import classes from '@/styles/indicator.module.css'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
 
-import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react'
 import { Carousel } from '@mantine/carousel'
 import { Image } from '@mantine/core'
 
@@ -34,18 +32,17 @@ export default function Projects() {
           <ContainerMotion>
             <div className="w-full">
               <Carousel
-                classNames={classes}
+                classNames={{
+                  indicator:
+                    'w-[18px] h-[8px] bg-[rgba(255,232,117,1)] border-[1px] border-solid border-[rgb(0,0,0)] transition-[width] duration-[250ms] ease-in-out data-[active=true]:w-[40px]',
+                }}
                 withIndicators
+                withControls={false}
+                slideGap="md"
                 height={300}
-                nextControlIcon={
-                  <IconArrowRight size={32} className="text-black bg-white p-1 rounded-full" />
-                }
-                previousControlIcon={
-                  <IconArrowLeft size={32} className="text-black bg-white p-1 rounded-full" />
-                }
                 emblaOptions={{
                   loop: true,
-                  dragFree: false,
+                  dragFree: true,
                   align: 'center',
                 }}
               >
@@ -55,7 +52,7 @@ export default function Projects() {
                       src={url}
                       alt={`${p.name} screenshot`}
                       height={300}
-                      className="w-full object-fill rounded-md"
+                      className={`w-full object-fill rounded-md ${p.img.length > 1 ? 'cursor-grab' : ''}`}
                     />
                   </Carousel.Slide>
                 ))}
