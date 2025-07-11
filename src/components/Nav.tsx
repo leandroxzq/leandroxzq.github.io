@@ -35,8 +35,8 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex flex-col items-center gap-4 max-w-3xl ${
-        isindex ? 'w-full' : 'w-full lg:w-2/12'
+      className={`${pressStart2P.className} flex flex-row sm:flex-col items-center gap-4 max-w-3xl ${
+        isindex ? 'w-full flex-col' : 'w-full lg:w-2/12 flex-row'
       }`}
     >
       {showBackButton && showPathname && (
@@ -48,7 +48,7 @@ export default function Nav({
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-1xl"
+            className="text-sm sm:text-md"
           >
             {pathname}
           </motion.p>

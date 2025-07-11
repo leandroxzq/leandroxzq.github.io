@@ -43,7 +43,7 @@ body {
 .custom-scroll {
   --sb-track-color: #424231;
   --sb-thumb-color: #899432;
-  --sb-size: 10px;
+  --sb-size: 6px;
 }
 
 .custom-scroll::-webkit-scrollbar {

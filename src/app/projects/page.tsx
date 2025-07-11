@@ -28,7 +28,7 @@ export default function Projects() {
   return (
     <Page>
       {data.reverse().map((p) => (
-        <div key={p.id} className="">
+        <div key={p.id} className="sm:mr-0 mr-4">
           <ContainerMotion>
             <div className="w-full">
               <Carousel
