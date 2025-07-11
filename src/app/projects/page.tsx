@@ -34,7 +34,7 @@ export default function Projects() {
               <Carousel
                 classNames={{
                   indicator:
-                    'w-[18px] h-[8px] bg-[rgba(255,232,117,1)] border-[1px] border-solid border-[rgb(0,0,0)] transition-[width] duration-[250ms] ease-in-out data-[active=true]:w-[40px]',
+                    'w-[18px] h-[8px] bg-gradient border-[1px] border-solid border-[rgb(0,0,0)] transition-[width] duration-[250ms] ease-in-out data-[active=true]:w-[40px]',
                 }}
                 withIndicators
                 withControls={false}
@@ -42,7 +42,7 @@ export default function Projects() {
                 height={300}
                 emblaOptions={{
                   loop: true,
-                  dragFree: true,
+                  dragFree: false,
                   align: 'center',
                 }}
               >
