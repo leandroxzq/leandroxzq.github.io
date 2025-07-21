@@ -40,7 +40,7 @@ export default function Home() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="box-shad relative rounded-full w-64 h-64 overflow-hidden border-4 border-white"
+            className="box-shad relative rounded-full md:w-64 md:h-64 h-52 w-52 overflow-hidden border-4 border-white"
           >
             <Image
               className=""
@@ -51,7 +51,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.h2
-            className={`text-4xl tracking-wider ${UbuntuText.className} gradient-text`}
+            className={`md:text-4xl text-3xl tracking-wider ${UbuntuText.className} gradient-text`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
