@@ -35,7 +35,7 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex flex-row sm:flex-col items-center gap-4 max-w-3xl px-3 ${
+      className={`${pressStart2P.className} flex flex-row sm:flex-col items-center gap-4 max-w-3xl px-3 py-3 ${
         isindex ? 'w-full flex-col' : 'w-full lg:w-2/12 flex-row'
       }`}
     >
