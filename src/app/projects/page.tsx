@@ -28,7 +28,7 @@ export default function Projects() {
   return (
     <Page>
       {data.reverse().map((p) => (
-        <div key={p.id} className="sm:mr-0 mr-4">
+        <div key={p.id} className="sm:mr-0 mr-2">
           <ContainerMotion>
             <div className="w-full">
               <Carousel
@@ -52,13 +52,13 @@ export default function Projects() {
                       src={url}
                       alt={`${p.name} screenshot`}
                       height={300}
-                      className={`w-full object-center h-[300px] rounded-md ${p.img.length > 1 ? 'cursor-grab' : ''}`}
+                      className={`w-full object-center h-[300px] ${p.img.length > 1 ? 'cursor-grab' : ''}`}
                     />
                   </Carousel.Slide>
                 ))}
               </Carousel>
             </div>
-            <div className="pt-4 space-y-4">
+            <div className="pt-4 space-y-4 p-4">
               <div className="flex items-center gap-2">
                 <h2 className={`text-xl font-bold ${pressStart2P.className}`}>{p.name}</h2>
                 <a

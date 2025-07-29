@@ -35,20 +35,20 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex flex-row sm:flex-col items-center gap-4 max-w-3xl ${
+      className={`${pressStart2P.className} flex flex-row sm:flex-col items-center gap-4 max-w-3xl px-3 ${
         isindex ? 'w-full flex-col' : 'w-full lg:w-2/12 flex-row'
       }`}
     >
       {showBackButton && showPathname && (
         <div className="flex justify-between items-center w-full gap-2 sm:gap-4">
           <Link href="/" aria-label="Voltar para a home" className="hover:text-yellow-300">
-            <IconArrowLeft size={32} />
+            <IconArrowLeft size={26} />
           </Link>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-sm sm:text-md"
+            className="text-xs"
           >
             {pathname}
           </motion.p>
@@ -68,7 +68,7 @@ export default function Nav({
             <Link legacyBehavior href={href} className={`min-w-full`}>
               {href === '/blog' ? (
                 <div
-                  className="center gap-2 cursor-not-allowed text-sm rounded-md p-3 border-2 border-gray-400 text-gray-400 opacity-50"
+                  className="center gap-2 cursor-not-allowed md:text-sm text-xs rounded-md border-2 p-2 md:p-3 border-gray-400 text-gray-400 opacity-50"
                   onClick={(e) => e.preventDefault()}
                 >
                   {label}
@@ -81,11 +81,11 @@ export default function Nav({
                       ease: 'linear',
                     }}
                   >
-                    <IconCodeCircle2Filled />
+                    <IconCodeCircle2Filled size={18} />
                   </motion.div>
                 </div>
               ) : (
-                <span className="w-full center text-sm rounded-md cursor-pointer text-center p-3 border-2 border-yellow-300 bg-gradient-light hover:text-black">
+                <span className="w-full center md:text-sm text-xs rounded-md cursor-pointer text-center p-2 md:p-3 border-2 border-yellow-300 bg-gradient-light hover:text-black">
                   {label}
                 </span>
               )}
