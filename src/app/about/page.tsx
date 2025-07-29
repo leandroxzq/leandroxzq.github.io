@@ -36,40 +36,42 @@ export default function About() {
   return (
     <Page>
       <ContainerMotion>
-        <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
-          {content.about.title}
-        </h3>
-        <p className="leading-relaxed">{content.about.description}</p>
+        <div className="p-3">
+          <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
+            {content.about.title}
+          </h3>
+          <p className="leading-relaxed">{content.about.description}</p>
+        </div>
       </ContainerMotion>
 
       <ContainerMotion delay={0.3}>
-        <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
-          {content.about.contact}
-        </h3>
-
-        {Links.map((link, index) =>
-          link.href ? (
-            <a
-              key={index}
-              className="flex w-fit p-2 gap-2 font-semibold rounded-md text-black bg-gray-300 hover:text-blue-600 transition-colors mb-3"
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.icon}
-              <span>{link.span}</span>
-            </a>
-          ) : (
-            <div
-              key={index}
-              className="flex w-fit p-2 gap-2 font-semibold rounded-md text-black bg-gray-300 hover:text-blue-600 transition-colors mb-3"
-            >
-              {link.icon}
-
-              <span>{link.span}</span>
-            </div>
-          ),
-        )}
+        <div className="p-3">
+          <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
+            {content.about.contact}
+          </h3>
+          {Links.map((link, index) =>
+            link.href ? (
+              <a
+                key={index}
+                className="flex w-fit p-2 gap-2 font-semibold rounded-md text-black bg-gray-300 hover:text-blue-600 transition-colors mb-3"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.icon}
+                <span>{link.span}</span>
+              </a>
+            ) : (
+              <div
+                key={index}
+                className="flex w-fit p-2 gap-2 font-semibold rounded-md text-black bg-gray-300 hover:text-blue-600 transition-colors mb-3"
+              >
+                {link.icon}
+                <span>{link.span}</span>
+              </div>
+            ),
+          )}
+        </div>
       </ContainerMotion>
     </Page>
   )
