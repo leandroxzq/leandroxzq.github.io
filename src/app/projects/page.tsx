@@ -28,7 +28,7 @@ export default function Projects() {
   return (
     <Page>
       {data.reverse().map((p) => (
-        <div key={p.id} className="sm:mr-0 mr-2">
+        <div key={p.id} className="sm:mr-0 sm:ml-0 ml-2 mr-2">
           <ContainerMotion>
             <div className="w-full">
               <Carousel
@@ -60,24 +60,26 @@ export default function Projects() {
             </div>
             <div className="pt-4 space-y-4 p-4">
               <div className="flex items-center gap-2">
-                <h2 className={`text-xl font-bold ${pressStart2P.className}`}>{p.name}</h2>
-                <a
-                  href={p.repo_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=" text-sm text-blue-400 underline hover:text-blue-600 transition-colors"
-                >
-                  {content.projects.repository}
-                </a>
+                <h2 className={`md:text-xl text-lg font-bold ${pressStart2P.className}`}>
+                  {p.name}
+                </h2>
               </div>
-              <p className="text-lg mb-2">{p.description}</p>
+              <a
+                href={p.repo_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:text-xs text-sm text-blue-400 underline hover:text-blue-600 transition-colors"
+              >
+                {content.projects.repository}
+              </a>
+              <p className="text-md md:text-lg mb-2">{p.description}</p>
 
-              <p className="text-base mt-2">{content.projects.tech}</p>
+              <p className="text-sm md:text-base mt-2">{content.projects.tech}</p>
               <ul className="flex flex-wrap gap-2">
                 {p.tec.map((tec) => (
                   <li
                     key={tec}
-                    className="inline-block font-bold p-2 border-2 border-gray-800 text-sm text-gray-400 transition-colors hover:bg-white hover:text-black rounded-lg"
+                    className="inline-block font-bold p-2 border-2 border-gray-800 text-xs md:text-sm text-gray-400 transition-colors hover:bg-white hover:text-black rounded-lg"
                   >
                     {tec}
                   </li>

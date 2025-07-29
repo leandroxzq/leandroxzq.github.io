@@ -37,7 +37,7 @@ export default function About() {
     <Page>
       <ContainerMotion>
         <div className="p-3">
-          <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
+          <h3 className={`md:text-xl text-lg font-bold text-white mb-4 ${pressStart2P.className}`}>
             {content.about.title}
           </h3>
           <p className="leading-relaxed">{content.about.description}</p>
@@ -46,7 +46,7 @@ export default function About() {
 
       <ContainerMotion delay={0.3}>
         <div className="p-3">
-          <h3 className={`text-xl font-bold text-white mb-4 ${pressStart2P.className}`}>
+          <h3 className={`text-md md:text-lg font-bold text-white mb-4 ${pressStart2P.className}`}>
             {content.about.contact}
           </h3>
           {Links.map((link, index) =>
