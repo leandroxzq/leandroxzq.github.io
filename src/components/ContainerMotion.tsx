@@ -7,7 +7,7 @@ export default function ContainerMotion({ children, delay = 0 }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
       className={
-        'relative border-2 border-gray-500 bg-gray-900 rounded-lg shadow-md overflow-hidden bg-gradient'
+        'bg-gradient relative overflow-hidden rounded-lg border-2 border-gray-500 bg-gray-900 shadow-md'
       }
     >
       {children}

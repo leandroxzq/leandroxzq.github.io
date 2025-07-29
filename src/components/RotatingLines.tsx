@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 
 export default function AnimatedBorder() {
   return (
-    <div className="absolute inset-0 overflow-hidden rounded-md pointer-events-none">
+    <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-md">
       {/* Top border */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"
+        className="absolute left-0 top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-yellow-300 to-transparent"
         initial={{ x: '-100%' }}
         animate={{ x: '100%' }}
         transition={{
@@ -16,7 +16,7 @@ export default function AnimatedBorder() {
       />
       {/* Right border */}
       <motion.div
-        className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-transparent via-yellow-300 to-transparent"
+        className="absolute right-0 top-0 h-full w-0.5 bg-gradient-to-b from-transparent via-yellow-300 to-transparent"
         initial={{ y: '-100%' }}
         animate={{ y: '100%' }}
         transition={{
@@ -28,7 +28,7 @@ export default function AnimatedBorder() {
       />
       {/* Bottom border */}
       <motion.div
-        className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-yellow-300 to-transparent"
+        className="absolute bottom-0 right-0 h-0.5 w-full bg-gradient-to-l from-transparent via-yellow-300 to-transparent"
         initial={{ x: '100%' }}
         animate={{ x: '-100%' }}
         transition={{
@@ -40,7 +40,7 @@ export default function AnimatedBorder() {
       />
       {/* Left border */}
       <motion.div
-        className="absolute bottom-0 left-0 w-0.5 h-full bg-gradient-to-t from-transparent via-yellow-300 to-transparent"
+        className="absolute bottom-0 left-0 h-full w-0.5 bg-gradient-to-t from-transparent via-yellow-300 to-transparent"
         initial={{ y: '100%' }}
         animate={{ y: '-100%' }}
         transition={{

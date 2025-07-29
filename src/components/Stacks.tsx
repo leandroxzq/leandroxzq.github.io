@@ -72,7 +72,7 @@ export default function Stacks() {
         {content.stacks.title}
       </motion.h2>
       <motion.div
-        className="w-full relative rounded-lg"
+        className="relative w-full rounded-lg"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
@@ -127,7 +127,7 @@ export default function Stacks() {
                     },
                   }}
                 >
-                  <div className="center text-4xl cursor-grab box-shad w-16 h-16 transition-transform duration-500">
+                  <div className="center box-shad h-16 w-16 cursor-grab text-4xl transition-transform duration-500">
                     {stack.icon}
                   </div>
                 </Tooltip>

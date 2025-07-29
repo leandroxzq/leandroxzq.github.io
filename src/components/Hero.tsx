@@ -87,7 +87,7 @@ export default function Hero({ children }: HeroProps) {
   return (
     <div className="relative h-full w-full">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-black" />
-      <div className="relative z-10 max-w-6xl mx-auto">{children}</div>
+      <div className="relative z-10 mx-auto max-w-6xl">{children}</div>
     </div>
   )
 }

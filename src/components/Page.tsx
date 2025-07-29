@@ -12,10 +12,10 @@ export default function Page({ children }) {
   }, [pathname])
 
   return (
-    <main className="flex flex-col lg:items-start items-center lg:flex-row min-h-dvh">
+    <main className="flex min-h-dvh flex-col items-center lg:flex-row lg:items-start">
       <Nav showBackButton excludeCurrentLink showPathname></Nav>
       <div
-        className={`w-full max-w-3xl sm:px-6 lg:px-8 sm:w-10/12 space-y-8 md:max-h-[95dvh] max-h-[90dvh] rounded-md ${isProjects ? 'overflow-hidden px-2' : ' custom-scroll overflow-auto'}`}
+        className={`max-h-[90dvh] w-full max-w-3xl space-y-8 rounded-md sm:w-10/12 sm:px-6 md:max-h-[95dvh] lg:px-8 ${isProjects ? 'overflow-hidden px-2' : 'custom-scroll overflow-auto'}`}
       >
         {children}
       </div>

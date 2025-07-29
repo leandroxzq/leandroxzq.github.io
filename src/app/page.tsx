@@ -26,21 +26,21 @@ export default function Home() {
   const { content } = useLanguage()
 
   return (
-    <article className="center gap-6 select-none min-h-dvh">
-      <div className="flex md:flex-row flex-col gap-4">
+    <article className="center min-h-dvh select-none gap-6">
+      <div className="flex flex-col gap-4 md:flex-row">
         <section
-          className={`order-2 md:order-1 flex flex-col justify-evenly gap-4 select-text max-w-80 ${pressStart2P.className}`}
+          className={`order-2 flex max-w-80 select-text flex-col justify-evenly gap-4 md:order-1 ${pressStart2P.className}`}
         >
           <Stacks />
           <Nav />
           <ButtonLanguage />
         </section>
-        <section className="order-1 md:order-2 flex flex-col items-center gap-2">
+        <section className="order-1 flex flex-col items-center gap-2 md:order-2">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="box-shad relative rounded-full md:w-64 md:h-64 h-52 w-52 overflow-hidden border-4 border-white"
+            className="box-shad relative h-52 w-52 overflow-hidden rounded-full border-4 border-white md:h-64 md:w-64"
           >
             <Image
               className=""
@@ -51,7 +51,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.h2
-            className={`md:text-4xl text-3xl tracking-wider ${UbuntuText.className} gradient-text`}
+            className={`text-3xl tracking-wider md:text-4xl ${UbuntuText.className} gradient-text`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

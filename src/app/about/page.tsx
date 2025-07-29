@@ -37,7 +37,7 @@ export default function About() {
     <Page>
       <ContainerMotion>
         <div className="p-3">
-          <h3 className={`md:text-xl text-lg font-bold text-white mb-4 ${pressStart2P.className}`}>
+          <h3 className={`mb-4 text-lg font-bold text-white md:text-xl ${pressStart2P.className}`}>
             {content.about.title}
           </h3>
           <p className="leading-relaxed">{content.about.description}</p>
@@ -46,14 +46,14 @@ export default function About() {
 
       <ContainerMotion delay={0.3}>
         <div className="p-3">
-          <h3 className={`text-md md:text-lg font-bold text-white mb-4 ${pressStart2P.className}`}>
+          <h3 className={`text-md mb-4 font-bold text-white md:text-lg ${pressStart2P.className}`}>
             {content.about.contact}
           </h3>
           {Links.map((link, index) =>
             link.href ? (
               <a
                 key={index}
-                className="flex w-fit p-2 gap-2 font-semibold rounded-md text-black bg-gray-300 hover:text-blue-600 transition-colors mb-3"
+                className="mb-3 flex w-fit gap-2 rounded-md bg-gray-300 p-2 font-semibold text-black transition-colors hover:text-blue-600"
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export default function About() {
             ) : (
               <div
                 key={index}
-                className="flex w-fit p-2 gap-2 font-semibold rounded-md text-black bg-gray-300 hover:text-blue-600 transition-colors mb-3"
+                className="mb-3 flex w-fit gap-2 rounded-md bg-gray-300 p-2 font-semibold text-black transition-colors hover:text-blue-600"
               >
                 {link.icon}
                 <span>{link.span}</span>

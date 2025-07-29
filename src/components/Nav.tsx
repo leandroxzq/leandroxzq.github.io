@@ -35,12 +35,12 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex flex-row sm:flex-col items-center gap-4 max-w-3xl px-3 py-3 ${
-        isindex ? 'w-full flex-col' : 'w-full lg:w-2/12 flex-row'
+      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-4 px-3 py-3 sm:flex-col ${
+        isindex ? 'w-full flex-col' : 'w-full flex-row lg:w-2/12'
       }`}
     >
       {showBackButton && showPathname && (
-        <div className="flex justify-between items-center w-full gap-2 sm:gap-4">
+        <div className="flex w-full items-center justify-between gap-2 sm:gap-4">
           <Link href="/" aria-label="Voltar para a home" className="hover:text-yellow-300">
             <IconArrowLeft size={26} />
           </Link>
@@ -68,7 +68,7 @@ export default function Nav({
             <Link legacyBehavior href={href} className={`min-w-full`}>
               {href === '/blog' ? (
                 <div
-                  className="center gap-2 cursor-not-allowed md:text-sm text-xs rounded-md border-2 p-2 md:p-3 border-gray-400 text-gray-400 opacity-50"
+                  className="center cursor-not-allowed gap-2 rounded-md border-2 border-gray-400 p-2 text-xs text-gray-400 opacity-50 md:p-3 md:text-sm"
                   onClick={(e) => e.preventDefault()}
                 >
                   {label}
@@ -85,7 +85,7 @@ export default function Nav({
                   </motion.div>
                 </div>
               ) : (
-                <span className="w-full center md:text-sm text-xs rounded-md cursor-pointer text-center p-2 md:p-3 border-2 border-yellow-300 bg-gradient-light hover:text-black">
+                <span className="center bg-gradient-light w-full cursor-pointer rounded-md border-2 border-yellow-300 p-2 text-center text-xs hover:text-black md:p-3 md:text-sm">
                   {label}
                 </span>
               )}
