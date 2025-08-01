@@ -1,31 +1,35 @@
 'use client'
 
-import RotatingLines from '@/components/RotatingLines'
-
 import { useRef } from 'react'
+
+import Image from 'next/image'
+import { Press_Start_2P } from 'next/font/google'
 
 import '@mantine/carousel/styles.css'
 import Autoplay from 'embla-carousel-autoplay'
 import { Carousel } from '@mantine/carousel'
 import { Tooltip } from '@mantine/core'
 
-import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa'
+import RotatingLines from '@/components/RotatingLines'
 
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiMongodb,
-  SiNextdotjs,
-  SiJest,
-  SiBootstrap,
-  SiSass,
-  SiMui,
-  SiMysql,
-} from 'react-icons/si'
-
-import { BiLogoPostgresql } from 'react-icons/bi'
-
-import { Press_Start_2P } from 'next/font/google'
+import JavaScript from '@/assets/images/tech/JavaScript.png'
+import Typescript from '@/assets/images/tech/TypeScript.png'
+import Nodejs from '@/assets/images/tech/Node.js.png'
+import Python from '@/assets/images/tech/Python.png'
+import Html5 from '@/assets/images/tech/HTML5.png'
+import Css3 from '@/assets/images/tech/CSS3.png'
+import Nextjs from '@/assets/images/tech/Next.js.png'
+import Reactjs from '@/assets/images/tech/React.png'
+import Jest from '@/assets/images/tech/Jest.png'
+import Redis from '@/assets/images/tech/Redis.png'
+import Bootstrap from '@/assets/images/tech/Bootstrap.png'
+import TailwindCSS from '@/assets/images/tech/TailwindCSS.png'
+import Sass from '@/assets/images/tech/Sass.png'
+import MaterialUI from '@/assets/images/tech/MaterialUI.png'
+import PostgresSQL from '@/assets/images/tech/PostgresSQL.png'
+import MySQL from '@/assets/images/tech/MySQL.png'
+import MongoDB from '@/assets/images/tech/MongoDB.png'
+import Git from '@/assets/images/tech/Git.png'
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
@@ -33,28 +37,24 @@ const pressStart2P = Press_Start_2P({
 })
 
 const stacks = [
-  { icon: <FaJs style={{ color: '#f0db4f' }} />, desc: 'JavaScript' },
-  { icon: <SiTypescript style={{ color: '#3178c6' }} />, desc: 'TypeScript' },
-  { icon: <FaNodeJs style={{ color: '#68a063' }} />, desc: 'Node.js' },
-  { icon: <FaHtml5 style={{ color: '#e34c26' }} />, desc: 'HTML5' },
-  { icon: <FaCss3Alt style={{ color: '#264de4' }} />, desc: 'CSS3' },
-  { icon: <SiNextdotjs style={{ color: '#ffffff' }} />, desc: 'Next.js' },
-  { icon: <FaReact style={{ color: '#61DBFB' }} />, desc: 'React' },
-  { icon: <SiJest style={{ color: '#99425b' }} />, desc: 'Jest' },
-  { icon: <SiBootstrap style={{ color: '#7952B3' }} />, desc: 'Bootstrap' },
-  {
-    icon: <SiTailwindcss style={{ color: '#38bdf8' }} />,
-    desc: 'TailwindCSS',
-  },
-  { icon: <SiSass style={{ color: '#cd6799' }} />, desc: 'Sass' },
-  { icon: <SiMui style={{ color: '#007FFF' }} />, desc: 'MaterialUI' },
-  {
-    icon: <BiLogoPostgresql style={{ color: '#336791' }} />,
-    desc: 'PostgreSQL',
-  },
-  { icon: <SiMysql style={{ color: '#00758F' }} />, desc: 'MySQL' },
-  { icon: <SiMongodb style={{ color: '#4DB33D' }} />, desc: 'MongoDB' },
-  { icon: <FaGitAlt style={{ color: '#f1502f' }} />, desc: 'Git' },
+  { icon: JavaScript, desc: 'JavaScript' },
+  { icon: Typescript, desc: 'TypeScript' },
+  { icon: Nodejs, desc: 'Node.js' },
+  { icon: Python, desc: 'Python' },
+  { icon: Html5, desc: 'HTML5' },
+  { icon: Css3, desc: 'CSS3' },
+  { icon: Nextjs, desc: 'Next.js' },
+  { icon: Reactjs, desc: 'React' },
+  { icon: Jest, desc: 'Jest' },
+  { icon: Redis, desc: 'Redis' },
+  { icon: Bootstrap, desc: 'Bootstrap' },
+  { icon: TailwindCSS, desc: 'TailwindCSS' },
+  { icon: Sass, desc: 'Sass' },
+  { icon: MaterialUI, desc: 'MaterialUI' },
+  { icon: PostgresSQL, desc: 'PostgreSQL' },
+  { icon: MySQL, desc: 'MySQL' },
+  { icon: MongoDB, desc: 'MongoDB' },
+  { icon: Git, desc: 'Git' },
 ]
 
 export default function Stacks() {
@@ -97,8 +97,15 @@ export default function Stacks() {
                 },
               }}
             >
-              <div className="center box-shad cursor-grab py-6 text-4xl transition-transform duration-500 hover:scale-125">
-                {stack.icon}
+              <div className="center box-shad cursor-grab py-6 text-4xl transition-transform duration-300 hover:scale-125">
+                <Image
+                  alt={`Logo da tecnologia ${stack.desc}`}
+                  draggable="false"
+                  width={36}
+                  height={36}
+                  src={stack.icon}
+                  className="grayscale-[0.2] hover:grayscale-0 hover:saturate-[1.4]"
+                />
               </div>
             </Tooltip>
           </Carousel.Slide>
