@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+'use client'
+
+import { Ubuntu } from 'next/font/google'
 
 import Hero from '@/components/Hero'
 import { LanguageProvider } from '@/context/LanguageContext'
@@ -9,23 +10,10 @@ import '@mantine/core/styles.css'
 import '@mantine/carousel/styles.css'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const UbuntuText = Ubuntu({
   subsets: ['latin'],
+  weight: '700',
 })
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
-
-export const metadata: Metadata = {
-  title: 'leandroxzq',
-  description: 'personal portfolio page',
-  icons: {
-    icon: ['favicon.ico'],
-  },
-}
 
 export default function RootLayout({
   children,
@@ -34,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} select-text antialiased`}>
+      <body className={`${UbuntuText.className} select-text antialiased`}>
         <MantineProvider>
           <LanguageProvider>
             <Hero>{children}</Hero>
