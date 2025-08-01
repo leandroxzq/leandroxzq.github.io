@@ -1,5 +1,14 @@
+'use client'
+
 import RotatingLines from '@/components/RotatingLines'
 import { useLanguage } from '@/context/LanguageContext'
+
+import { useRef } from 'react'
+
+import '@mantine/carousel/styles.css'
+import Autoplay from 'embla-carousel-autoplay'
+import { Carousel } from '@mantine/carousel'
+import { Tooltip } from '@mantine/core'
 
 import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa'
 
@@ -18,13 +27,6 @@ import {
 import { BiLogoPostgresql } from 'react-icons/bi'
 
 import { motion } from 'framer-motion'
-import { Tooltip } from '@mantine/core'
-
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 
 import { Press_Start_2P } from 'next/font/google'
 
@@ -61,6 +63,8 @@ const stacks = [
 export default function Stacks() {
   const { content } = useLanguage()
 
+  const autoplay = useRef(Autoplay({ delay: 500 }))
+
   return (
     <>
       <motion.h2
@@ -77,64 +81,49 @@ export default function Stacks() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <RotatingLines />
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 800,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          slidesPerView={4}
-          breakpoints={{
-            320: {
-              slidesPerView: 3,
-            },
-            768: {
-              slidesPerView: 4,
-            },
-            1024: {
-              slidesPerView: 4,
-            },
-          }}
+        <Carousel
+          slideSize="25%"
+          emblaOptions={{ loop: true, align: 'start' }}
+          withControls={false}
+          withIndicators={false}
+          plugins={[autoplay.current]}
+          onMouseEnter={autoplay.current.stop}
+          onMouseLeave={() => autoplay.current.play()}
         >
           {stacks.map((stack, index) => (
-            <SwiperSlide key={index}>
-              <div className="center h-full w-full p-3">
-                <Tooltip
-                  arrowOffset={10}
-                  arrowSize={8}
-                  offset={{ mainAxis: 0, crossAxis: 0 }}
-                  withArrow
-                  label={
-                    <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
-                      {stack.desc}
-                    </span>
-                  }
-                  styles={{
-                    tooltip: {
-                      background: 'linear-gradient(124deg, #ffffff 0%, #afa442 49%, #ffe600 100%)',
-                      color: '#000',
-                      borderRadius: 8,
-                      padding: '8px 12px',
-                    },
-                    arrow: {
-                      filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.2))',
-                      background: 'inherit',
-                      backgroundClip: 'padding-box',
-                    },
-                  }}
-                >
-                  <div className="center box-shad h-16 w-16 cursor-grab text-4xl transition-transform duration-500">
-                    {stack.icon}
-                  </div>
-                </Tooltip>
-              </div>
-            </SwiperSlide>
+            <Carousel.Slide key={index}>
+              <Tooltip
+                arrowOffset={10}
+                arrowSize={8}
+                offset={{ mainAxis: 0, crossAxis: 0 }}
+                withArrow
+                label={
+                  <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
+                    {stack.desc}
+                  </span>
+                }
+                styles={{
+                  tooltip: {
+                    background: 'linear-gradient(124deg, #ffffff 0%, #afa442 49%, #ffe600 100%)',
+                    color: '#000',
+                    borderRadius: 8,
+                    padding: '8px 12px',
+                  },
+                  arrow: {
+                    filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.2))',
+                    background: 'inherit',
+                    backgroundClip: 'padding-box',
+                  },
+                }}
+              >
+                <div className="center box-shad cursor-grab py-6 text-4xl transition-transform duration-500 hover:scale-125">
+                  {stack.icon}
+                </div>
+              </Tooltip>
+            </Carousel.Slide>
           ))}
-        </Swiper>
+        </Carousel>
+        <RotatingLines />
       </motion.div>
     </>
   )
