@@ -42,11 +42,12 @@ export default function ButtonLanguage() {
           if (value) changeLanguage(value)
         }}
         data={[
-          { value: 'en', label: isDesktop ? 'English' : '🇺🇸' },
-          { value: 'pt', label: isDesktop ? 'Português' : '🇧🇷' },
+          { value: 'en', label: isDesktop ? 'English' : 'pt-br 🇺🇸' },
+          { value: 'pt', label: isDesktop ? 'Português' : 'en 🇧🇷' },
         ]}
         withCheckIcon={isDesktop ? true : false}
         checkIconPosition="right"
+        aria-label="Select language"
         className={isDesktop ? 'absolute w-36' : 'absolute right-4 top-4 w-16'}
       />
     </motion.div>

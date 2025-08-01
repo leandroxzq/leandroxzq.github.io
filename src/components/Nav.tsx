@@ -35,8 +35,8 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-4 px-3 py-3 sm:flex-col ${
-        isindex ? 'w-full flex-col' : 'w-full flex-row lg:w-2/12'
+      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-4 sm:flex-col ${
+        isindex ? 'w-full flex-col' : 'w-full flex-row py-3 lg:w-2/12'
       }`}
     >
       {showBackButton && showPathname && (
