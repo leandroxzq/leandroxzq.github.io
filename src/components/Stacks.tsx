@@ -1,7 +1,6 @@
 'use client'
 
 import RotatingLines from '@/components/RotatingLines'
-import { useLanguage } from '@/context/LanguageContext'
 
 import { useRef } from 'react'
 
@@ -25,8 +24,6 @@ import {
 } from 'react-icons/si'
 
 import { BiLogoPostgresql } from 'react-icons/bi'
-
-import { motion } from 'framer-motion'
 
 import { Press_Start_2P } from 'next/font/google'
 
@@ -61,70 +58,53 @@ const stacks = [
 ]
 
 export default function Stacks() {
-  const { content } = useLanguage()
-
   const autoplay = useRef(Autoplay({ delay: 500 }))
 
   return (
-    <>
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center"
+    <div className="relative mb-4 w-full rounded-lg">
+      <Carousel
+        slideSize="25%"
+        emblaOptions={{ loop: true, align: 'start' }}
+        withControls={false}
+        withIndicators={false}
+        plugins={[autoplay.current]}
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={() => autoplay.current.play()}
       >
-        {content.stacks.title}
-      </motion.h2>
-      <motion.div
-        className="relative w-full rounded-lg"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Carousel
-          slideSize="25%"
-          emblaOptions={{ loop: true, align: 'start' }}
-          withControls={false}
-          withIndicators={false}
-          plugins={[autoplay.current]}
-          onMouseEnter={autoplay.current.stop}
-          onMouseLeave={() => autoplay.current.play()}
-        >
-          {stacks.map((stack, index) => (
-            <Carousel.Slide key={index}>
-              <Tooltip
-                arrowOffset={10}
-                arrowSize={8}
-                offset={{ mainAxis: 0, crossAxis: 0 }}
-                withArrow
-                label={
-                  <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
-                    {stack.desc}
-                  </span>
-                }
-                styles={{
-                  tooltip: {
-                    background: 'linear-gradient(124deg, #ffffff 0%, #afa442 49%, #ffe600 100%)',
-                    color: '#000',
-                    borderRadius: 8,
-                    padding: '8px 12px',
-                  },
-                  arrow: {
-                    filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.2))',
-                    background: 'inherit',
-                    backgroundClip: 'padding-box',
-                  },
-                }}
-              >
-                <div className="center box-shad cursor-grab py-6 text-4xl transition-transform duration-500 hover:scale-125">
-                  {stack.icon}
-                </div>
-              </Tooltip>
-            </Carousel.Slide>
-          ))}
-        </Carousel>
-        <RotatingLines />
-      </motion.div>
-    </>
+        {stacks.map((stack, index) => (
+          <Carousel.Slide key={index}>
+            <Tooltip
+              arrowOffset={10}
+              arrowSize={8}
+              offset={{ mainAxis: 0, crossAxis: 0 }}
+              withArrow
+              label={
+                <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
+                  {stack.desc}
+                </span>
+              }
+              styles={{
+                tooltip: {
+                  background: 'linear-gradient(124deg, #ffffff 0%, #afa442 49%, #ffe600 100%)',
+                  color: '#000',
+                  borderRadius: 8,
+                  padding: '8px 12px',
+                },
+                arrow: {
+                  filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.2))',
+                  background: 'inherit',
+                  backgroundClip: 'padding-box',
+                },
+              }}
+            >
+              <div className="center box-shad cursor-grab py-6 text-4xl transition-transform duration-500 hover:scale-125">
+                {stack.icon}
+              </div>
+            </Tooltip>
+          </Carousel.Slide>
+        ))}
+      </Carousel>
+      <RotatingLines />
+    </div>
   )
 }

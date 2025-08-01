@@ -25,9 +25,23 @@ export default function Home() {
         <section
           className={`order-2 flex max-w-80 select-text flex-col justify-evenly gap-4 md:order-1 ${pressStart2P.className}`}
         >
-          <Stacks />
-          <Nav />
-          <ButtonLanguage />
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            {content.stacks.title}
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Stacks />
+            <Nav />
+            <ButtonLanguage />
+          </motion.div>
         </section>
         <section className="order-1 flex flex-col items-center gap-2 md:order-2">
           <motion.div
