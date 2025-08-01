@@ -5,6 +5,7 @@ import Page from '@/components/Page'
 import { useLanguage } from '@/context/LanguageContext'
 import { projects } from '@/data/projects'
 
+import '@mantine/carousel/styles.css'
 import { Carousel } from '@mantine/carousel'
 import { Image } from '@mantine/core'
 
