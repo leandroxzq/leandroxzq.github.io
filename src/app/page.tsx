@@ -8,7 +8,7 @@ import { Press_Start_2P } from 'next/font/google'
 
 import Nav from '@/components/Nav'
 import Stacks from '@/components/Stacks'
-import Avatar from '@/assets/images/avatar.png'
+import Avatar from '@/assets/images/avatar.webp'
 import ButtonLanguage from '@/components/ButtonLanguague'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -43,11 +43,11 @@ export default function Home() {
             className="box-shad relative h-52 w-52 overflow-hidden rounded-full border-4 border-white md:h-64 md:w-64"
           >
             <Image
-              className=""
               src={Avatar}
               alt="Avatar generated in Copilot"
               draggable="false"
               width={320}
+              height={320}
             />
           </motion.div>
           <motion.h2
