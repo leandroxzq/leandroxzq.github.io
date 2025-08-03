@@ -3,7 +3,7 @@
 import Image from 'next/image'
 
 import { motion } from 'framer-motion'
-import { Press_Start_2P } from 'next/font/google'
+import { Press_Start_2P, Ubuntu } from 'next/font/google'
 
 import Nav from '@/components/Nav'
 import Stacks from '@/components/Stacks'
@@ -14,6 +14,11 @@ import { useLanguage } from '@/context/LanguageContext'
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
   weight: '400',
+})
+
+const UbuntuText = Ubuntu({
+  subsets: ['latin'],
+  weight: ['400', '700'],
 })
 
 export default function Home() {
@@ -66,7 +71,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.h2
-            className={`gradient-text text-3xl tracking-wider md:text-4xl`}
+            className={`${UbuntuText.className} gradient-text text-3xl font-bold tracking-wider md:text-4xl`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
