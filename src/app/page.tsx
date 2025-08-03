@@ -40,6 +40,12 @@ export default function Home() {
           >
             <Stacks />
             <Nav />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <ButtonLanguage />
           </motion.div>
         </section>
