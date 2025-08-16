@@ -47,6 +47,7 @@ export default function Home() {
             <Nav />
           </motion.div>
           <motion.div
+            className={'absolute right-4 top-4 mt-4 w-20 md:static md:mt-0 md:w-36'}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
