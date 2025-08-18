@@ -15,9 +15,6 @@ const RobotoText = Roboto({
 export const metadata: Metadata = {
   title: 'leandroxzq',
   description: 'personal portfolio page',
-  icons: {
-    icon: ['favicon.ico'],
-  },
 }
 
 export default function RootLayout({
