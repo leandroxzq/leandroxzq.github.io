@@ -42,18 +42,20 @@ export default function Nav({
       }`}
     >
       {showBackButton && showPathname && (
-        <div className="flex w-full items-center justify-between gap-2 sm:gap-4">
+        <div className="flex w-full items-center justify-between gap-2 text-xs sm:gap-4">
           <Link href="/" aria-label="Voltar para a home" className="hover:text-yellow-300">
             <IconArrowLeft size={26} />
           </Link>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-xs"
-          >
-            {pathname}
-          </motion.p>
+          <div className="center gap-1">
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 1, repeat: Infinity }}
+            >
+              /
+            </motion.span>
+            <p>{pathname.split('/')[1]}</p>
+          </div>
         </div>
       )}
 
