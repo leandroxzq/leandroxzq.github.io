@@ -37,8 +37,8 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-2 px-2 sm:flex-col sm:gap-3 ${
-        isindex ? 'w-full flex-col' : 'mt-4 w-full flex-row lg:w-2/12'
+      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-2 sm:flex-col sm:gap-3 ${
+        isindex ? 'w-full flex-col' : 'mt-4 w-full flex-row px-2 lg:w-2/12'
       }`}
     >
       {showBackButton && showPathname && (
@@ -72,7 +72,7 @@ export default function Nav({
             <Link legacyBehavior href={href} className="min-w-full">
               {href === '/blog' ? (
                 <div
-                  className={`center cursor-not-allowed gap-2 rounded-md border-2 border-gray-400 py-2 text-gray-400 opacity-50 md:p-3 ${isindex ? 'text-sm' : 'text-[8px]'}`}
+                  className={`center cursor-not-allowed gap-2 rounded-md border-2 border-gray-400 py-2 text-gray-400 opacity-50 md:p-3 ${isindex ? 'text-sm' : 'text-[8px] md:text-xs'}`}
                   onClick={(e) => e.preventDefault()}
                 >
                   {label}
@@ -85,12 +85,14 @@ export default function Nav({
                       ease: 'linear',
                     }}
                   >
-                    <IconCodeCircle2Filled className="h-2 w-2 md:h-4 md:w-4" />
+                    <IconCodeCircle2Filled
+                      className={`h-2 w-2 md:h-4 md:w-4 ${isindex && 'h-4 w-4'}`}
+                    />
                   </motion.div>
                 </div>
               ) : (
                 <span
-                  className={`center bg-gradient-light w-full cursor-pointer rounded-md border-2 border-yellow-300 py-2 text-center hover:text-black md:p-3 ${isindex ? 'text-sm' : 'text-[8px]'}`}
+                  className={`center bg-gradient-light w-full cursor-pointer rounded-md border-2 border-yellow-300 py-2 text-center hover:text-black md:p-3 ${isindex ? 'text-sm' : 'text-[8px] md:text-xs'}`}
                 >
                   {label}
                 </span>

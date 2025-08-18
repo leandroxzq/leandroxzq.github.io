@@ -45,7 +45,6 @@ export default function Projects() {
               withIndicators
               withControls={false}
               slideGap="md"
-              height={300}
               emblaOptions={{
                 loop: true,
                 dragFree: false,
@@ -57,8 +56,7 @@ export default function Projects() {
                   <Image
                     src={url}
                     alt={`${p.name} screenshot`}
-                    height={300}
-                    className={`h-[300px] w-full object-center ${p.img.length > 1 ? 'cursor-grab' : ''}`}
+                    className={`w-full object-contain object-center ${p.img.length > 1 && 'cursor-grab'}`}
                   />
                 </Carousel.Slide>
               ))}
