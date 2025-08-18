@@ -37,12 +37,12 @@ export default function Nav({
 
   return (
     <nav
-      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-4 sm:flex-col ${
-        isindex ? 'w-full flex-col' : 'w-full flex-row p-2 pt-4 lg:w-2/12'
+      className={`${pressStart2P.className} flex max-w-3xl flex-row items-center gap-2 px-2 sm:flex-col sm:gap-3 ${
+        isindex ? 'w-full flex-col' : 'mt-4 w-full flex-row lg:w-2/12'
       }`}
     >
       {showBackButton && showPathname && (
-        <div className="flex w-full items-center justify-between gap-2 text-xs sm:gap-4">
+        <div className="flex w-full items-center gap-2 text-[8px] sm:gap-4 md:text-xs">
           <Link href="/" aria-label="Voltar para a home" className="hover:text-yellow-300">
             <IconArrowLeft size={26} />
           </Link>
@@ -66,13 +66,13 @@ export default function Nav({
             key={label}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.3 }}
+            transition={{ duration: 0.8, delay: i * 0.2 }}
             className="w-full"
           >
-            <Link legacyBehavior href={href} className={`min-w-full`}>
+            <Link legacyBehavior href={href} className="min-w-full">
               {href === '/blog' ? (
                 <div
-                  className="center cursor-not-allowed gap-2 rounded-md border-2 border-gray-400 p-2 text-xs text-gray-400 opacity-50 md:p-3 md:text-sm"
+                  className={`center cursor-not-allowed gap-2 rounded-md border-2 border-gray-400 py-2 text-gray-400 opacity-50 md:p-3 ${isindex ? 'text-sm' : 'text-[8px]'}`}
                   onClick={(e) => e.preventDefault()}
                 >
                   {label}
@@ -85,11 +85,13 @@ export default function Nav({
                       ease: 'linear',
                     }}
                   >
-                    <IconCodeCircle2Filled size={18} />
+                    <IconCodeCircle2Filled className="h-2 w-2 md:h-4 md:w-4" />
                   </motion.div>
                 </div>
               ) : (
-                <span className="center bg-gradient-light w-full cursor-pointer rounded-md border-2 border-yellow-300 p-2 text-center text-xs hover:text-black md:p-3 md:text-sm">
+                <span
+                  className={`center bg-gradient-light w-full cursor-pointer rounded-md border-2 border-yellow-300 py-2 text-center hover:text-black md:p-3 ${isindex ? 'text-sm' : 'text-[8px]'}`}
+                >
                   {label}
                 </span>
               )}

@@ -84,8 +84,8 @@ export default function Stacks() {
           {stacks.map((stack, index) => (
             <Carousel.Slide key={index}>
               <Tooltip
-                arrowOffset={10}
-                arrowSize={8}
+                arrowSize={10}
+                events={{ hover: true, focus: true, touch: true }}
                 offset={{ mainAxis: 0, crossAxis: 0 }}
                 withArrow
                 label={
