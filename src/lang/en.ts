@@ -12,10 +12,30 @@ const en = {
   about: {
     title: 'About Me',
     description:
-      'Hello, my name is Leandro and I am currently studying Systems Analysis and Development at IFPE. I am dedicated, focused on continuous learning, always looking to learn and improve.',
+      'Hello, my name is Leandro and I am a Systems Analysis and Development student at IFPE. I am passionate about learning and always looking to improve my skills. My main tech stack includes JavaScript, TypeScript, Node.js, and PostgreSQL, with a focus on building modern and scalable applications. I have experience with automated testing using Jest and work with efficient deployments through Docker and CI/CD practices, ensuring fast and reliable deliveries.',
     contact: 'Contact',
     buttonClipboard: 'Copy to Clipboard',
     buttonRedirect: 'Redirect',
+    education: {
+      title: 'Education',
+      degrees: [
+        {
+          school: 'Instituto Federal de Pernambuco (IFPE)',
+          level: 'Higher Education',
+          course: 'Systems Analysis and Development',
+          period: 'Feb 2024 - Dec 2026 (ongoing)',
+          description: '',
+        },
+        {
+          school: 'Escola Técnica Estadual Maximiano Accioly Campos',
+          level: 'High School',
+          course: 'Computer Networks',
+          period: 'Feb 2018 - Dec 2020',
+          description:
+            'Completed technical high school in Computer Networks with various subjects. Studied Computer Maintenance (MMC), Operating Systems (ASO1 and ASO2), Basic and Office Computing (IBAE), Ethics and Information Security Management (EGSI), and Computer Networks (RC1 and RC2).',
+        },
+      ],
+    },
   },
   projects: {
     repository: 'Repository',

@@ -12,10 +12,30 @@ const pt = {
   about: {
     title: 'Sobre mim',
     description:
-      'Olá, meu nome é Leandro e atualmente estou cursando Análise e Desenvolvimento de Sistemas no IFPE. Sou dedicado, focado em aprendizado contínuo, sempre buscando aprender e me aprimorar.',
+      'Olá, meu nome é Leandro e sou estudante de Análise e Desenvolvimento de Sistemas no IFPE. Sou dedicado e focado em aprendizado contínuo, sempre buscando aprimorar minhas habilidades. Minha principal stack inclui JavaScript, TypeScript, Node.js e PostgreSQL, com foco em criar aplicações modernas e escaláveis. Tenho experiência com testes automatizados usando Jest e trabalho com deploys eficientes através de Docker e práticas de CI/CD, garantindo entregas rápidas e seguras.',
     contact: 'Contato',
     buttonClipboard: 'Copiar para a área de transferência',
     buttonRedirect: 'Redirecionar',
+    education: {
+      title: 'Formação Acadêmica',
+      degrees: [
+        {
+          school: 'Instituto Federal de Pernambuco (IFPE)',
+          level: 'Ensino Superior',
+          course: 'Análise e Desenvolvimento de Sistemas',
+          period: 'fev de 2024 - dez de 2026 (cursando)',
+          description: '',
+        },
+        {
+          school: 'Escola Técnica Estadual Maximiano Accioly Campos',
+          level: 'Ensino Médio',
+          course: 'Redes de Computadores',
+          period: 'fev de 2018 - dez de 2020',
+          description:
+            'Concluí o ensino médio técnico em Redes de Computadores, com diversas disciplinas. Estudei Manutenção de Microcomputadores (MMC), Sistemas Operacionais (ASO1 e ASO2), IBAE (Informática Básica e Escritório), Ética e Gestão de Segurança da Informação (EGSI), Redes de Computadores (RC1 e RC2).',
+        },
+      ],
+    },
   },
   projects: {
     repository: 'Repositório',
