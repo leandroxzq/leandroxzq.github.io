@@ -14,6 +14,8 @@ const en = {
     description:
       'Hello, my name is Leandro and I am currently studying Systems Analysis and Development at IFPE. I am dedicated, focused on continuous learning, always looking to learn and improve.',
     contact: 'Contact',
+    buttonClipboard: 'Copy to Clipboard',
+    buttonRedirect: 'Redirect',
   },
   projects: {
     repository: 'Repository',

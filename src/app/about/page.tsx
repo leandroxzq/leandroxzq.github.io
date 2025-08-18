@@ -6,6 +6,8 @@ import { useLanguage } from '@/context/LanguageContext'
 
 import { Press_Start_2P } from 'next/font/google'
 import { IconBrandGithub, IconBrandLinkedin, IconMailFast } from '@tabler/icons-react'
+import { Tooltip } from '@mantine/core'
+import { useState } from 'react'
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
@@ -33,6 +35,8 @@ const Links = [
 export default function About() {
   const { content } = useLanguage()
 
+  const [openedIndex, setOpenedIndex] = useState<number | null>(null)
+
   return (
     <Page>
       <ContainerMotion>
@@ -49,28 +53,55 @@ export default function About() {
           <h3 className={`text-md mb-4 font-bold text-white md:text-lg ${pressStart2P.className}`}>
             {content.about.contact}
           </h3>
-          {Links.map((link, index) =>
-            link.href ? (
-              <a
-                key={index}
-                className="mb-3 flex w-fit gap-2 rounded-md bg-gray-300 p-2 font-semibold text-black transition-colors hover:text-blue-600"
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+          {Links.map((link, index) => (
+            <div
+              key={index}
+              className="mb-3 flex w-fit flex-row gap-2 rounded-md bg-gray-300 p-2 font-semibold text-black transition-colors hover:text-blue-600"
+            >
+              <Tooltip
+                opened={openedIndex === index}
+                transitionProps={{ transition: 'slide-up', duration: 300 }}
+                arrowOffset={10}
+                arrowSize={8}
+                offset={{ mainAxis: 0, crossAxis: 0 }}
+                withArrow
+                label={
+                  <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
+                    {link.href ? content.about.buttonRedirect : content.about.buttonClipboard}
+                  </span>
+                }
+                styles={{
+                  tooltip: {
+                    background: 'linear-gradient(124deg, #ffffff 0%, #afa442 49%, #ffe600 100%)',
+                    color: '#000',
+                    marginBottom: 8,
+                    padding: '8px 12px',
+                  },
+                  arrow: {
+                    filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.2))',
+                    background: 'inherit',
+                    backgroundClip: 'padding-box',
+                  },
+                }}
               >
-                {link.icon}
-                <span>{link.span}</span>
-              </a>
-            ) : (
-              <div
-                key={index}
-                className="mb-3 flex w-fit gap-2 rounded-md bg-gray-300 p-2 font-semibold text-black transition-colors hover:text-blue-600"
-              >
-                {link.icon}
-                <span>{link.span}</span>
-              </div>
-            ),
-          )}
+                <button
+                  type="button"
+                  className="flex w-fit gap-2"
+                  onClick={() => (
+                    link.href
+                      ? window.open(link.href, '_blank')
+                      : navigator.clipboard.writeText(link.span),
+                    setOpenedIndex(index),
+                    setTimeout(() => setOpenedIndex(null), 2000)
+                  )}
+                  rel="noopener noreferrer"
+                >
+                  {link.icon}
+                  <span>{link.span}</span>
+                </button>
+              </Tooltip>
+            </div>
+          ))}
         </div>
       </ContainerMotion>
     </Page>

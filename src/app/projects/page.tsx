@@ -86,7 +86,7 @@ export default function Projects() {
                 {p.tec.map((tec) => (
                   <li
                     key={tec}
-                    className="bg-gradient-light inline-block cursor-pointer rounded-lg border-2 border-gray-800 p-2 text-xs font-bold text-gray-400 transition-colors hover:bg-white hover:text-black md:text-sm"
+                    className="bg-gradient-light inline-block rounded-lg border-2 border-gray-800 p-2 text-xs font-bold text-gray-400 transition-colors hover:bg-white hover:text-black md:text-sm"
                   >
                     {tec}
                   </li>
