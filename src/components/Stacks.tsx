@@ -107,14 +107,14 @@ export default function Stacks() {
                   },
                 }}
               >
-                <div className="center box-shad cursor-grab py-6 text-4xl transition-transform duration-300 hover:scale-125">
+                <div className="center box-shad cursor-grab py-6 transition-transform duration-300 hover:scale-125">
                   <Image
                     alt={`Logo da tecnologia ${stack.desc}`}
                     draggable="false"
                     width={36}
                     height={36}
                     src={stack.icon}
-                    className="grayscale-[0.2] hover:grayscale-0 hover:saturate-[1.4]"
+                    className="grayscale-[0.3] hover:grayscale-0 hover:saturate-[1.3]"
                   />
                 </div>
               </Tooltip>
