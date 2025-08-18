@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 
 import Hero from '@/components/Hero'
-import { LanguageProvider } from '@/context/LanguageContext'
+import Providers from '@/app/providers'
 
-import { MantineProvider } from '@mantine/core'
 import '@mantine/core/styles.css'
 import './globals.css'
 
@@ -29,11 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${RobotoText.className} select-text font-normal antialiased`}>
-        <MantineProvider>
-          <LanguageProvider>
-            <Hero>{children}</Hero>
-          </LanguageProvider>
-        </MantineProvider>
+        <Providers>
+          <Hero>{children}</Hero>
+        </Providers>
       </body>
     </html>
   )
