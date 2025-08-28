@@ -25,8 +25,8 @@ export default function ButtonLanguage() {
   return (
     <motion.div
       className={'absolute right-4 top-4 mt-4 w-20 md:static md:mt-0 md:w-36'}
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       <Select
