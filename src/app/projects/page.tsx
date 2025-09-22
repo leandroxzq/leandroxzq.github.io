@@ -40,7 +40,7 @@ export default function Projects() {
               onMouseLeave={() => autoplay.current.play()}
               classNames={{
                 indicator:
-                  'min-h-[8px] bg-indicator border-[1px] border-solid border-[rgb(0,0,0)] transition-[width] duration-[250ms] data-[active=true]:w-[40px]',
+                  'min-h-[6px] bg-gradient border-[1px] border-solid border-[rgb(0,0,0)] transition-[width] duration-[250ms] data-[active=true]:w-[40px]',
               }}
               withIndicators
               withControls={false}
@@ -72,10 +72,20 @@ export default function Projects() {
               href={p.repo_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-blue-400 underline transition-colors hover:text-blue-600 md:text-sm"
+              className="mr-4 text-xs text-blue-400 underline transition-colors hover:text-blue-600 md:text-sm"
             >
               {content.projects.repository}
             </a>
+            {p.deploy_url && (
+              <a
+                href={p.deploy_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-blue-400 underline transition-colors hover:text-blue-600 md:text-sm"
+              >
+                Deploy
+              </a>
+            )}
             <p className="text-md mb-2 md:text-lg">{p.description}</p>
 
             <p className="mt-2 text-sm md:text-base">{content.projects.tech}</p>

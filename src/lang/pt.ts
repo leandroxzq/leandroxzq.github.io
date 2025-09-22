@@ -48,6 +48,14 @@ const pt = {
       description:
         'Aplicação desenvolvida como proposta para o Desafio #1: Experiência Conversacional da FURIA. O projeto combina um chatbot inteligente, chat em tempo real entre fãs e informações atualizadas do time de CS da FURIA.',
     },
+    cepsy: {
+      description:
+        'Uma aplicação web simples que permite aos usuários buscar códigos postais brasileiros (CEPs) e recuperar as informações de endereço correspondentes usando a API ViaCEP. O aplicativo oferece uma interface intuitiva para os usuários inserirem um CEP e visualizarem os resultados.',
+    },
+    rickandmortyquest: {
+      description:
+        'Uma aplicação web que interage com a API de Rick and Morty para proporcionar uma experiência envolvente aos usuários. Os usuários podem explorar personagens, episódios e locais da série, com recursos como busca, filtragem e paginação para facilitar a navegação.',
+    },
   },
 }
 
