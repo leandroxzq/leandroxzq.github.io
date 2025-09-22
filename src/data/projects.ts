@@ -19,7 +19,8 @@ export const projects = [
     tec: ['HTML', 'JavaScript', 'SCSS'],
     deploy_url: 'https://leandroxzq.github.io/cepsy-api/',
     img: [
-      'https://private-user-images.githubusercontent.com/149272684/379970143-fdd8eb87-bf09-431a-a4af-27813aa3cca1.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTg1NTQxOTksIm5iZiI6MTc1ODU1Mzg5OSwicGF0aCI6Ii8xNDkyNzI2ODQvMzc5OTcwMTQzLWZkZDhlYjg3LWJmMDktNDMxYS1hNGFmLTI3ODEzYWEzY2NhMS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwOTIyJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDkyMlQxNTExMzlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03MTAyZTQ1YjIxZTRmNDUwMmEzNzYxMGY4ODY2YTFlMzIwYmFmNzg0NTJmMDIxYjFhYWNjYjU5ZWJiNzQ0MmJmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.AB5QTlE-ng9xC7pr04QUCIKYUphRuwLV2zHDtHoW7nI',
+      'https://res.cloudinary.com/duisj21wq/image/upload/v1758556449/cepsy_1_zmclbw.png',
+      'https://res.cloudinary.com/duisj21wq/image/upload/v1758556449/cepsy_2_nfwgza.png',
     ],
   },
   {
