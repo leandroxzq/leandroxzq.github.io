@@ -32,6 +32,8 @@ import PostgresSQL from '@/assets/images/tech/PostgresSQL.png'
 import MySQL from '@/assets/images/tech/MySQL.png'
 import MongoDB from '@/assets/images/tech/MongoDB.png'
 import Git from '@/assets/images/tech/Git.png'
+import Docker from '@/assets/images/tech/Docker.png'
+import RabbitMQ from '@/assets/images/tech/RabbitMQ.png'
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
@@ -57,6 +59,8 @@ const stacks = [
   { icon: MySQL, desc: 'MySQL' },
   { icon: MongoDB, desc: 'MongoDB' },
   { icon: Git, desc: 'Git' },
+  { icon: Docker, desc: 'Docker' },
+  { icon: RabbitMQ, desc: 'RabbitMQ' },
 ]
 
 export default function Stacks() {
