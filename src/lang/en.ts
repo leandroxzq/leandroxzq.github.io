@@ -15,7 +15,7 @@ const en = {
       'Hello, my name is Leandro and I am a Systems Analysis and Development student at IFPE. I am passionate about learning and always looking to improve my skills. My main tech stack includes JavaScript, TypeScript, Node.js, and PostgreSQL, with a focus on building modern and scalable applications. I have experience with automated testing using Jest and work with efficient deployments through Docker and CI/CD practices, ensuring fast and reliable deliveries.',
     contact: 'Contact',
     buttonClipboard: 'Copy to Clipboard',
-    buttonRedirect: 'Redirect',
+    buttonRedirect: 'Redirected',
     education: {
       title: 'Education',
       degrees: [

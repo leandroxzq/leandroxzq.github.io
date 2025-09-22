@@ -15,7 +15,7 @@ const pt = {
       'Olá, meu nome é Leandro e sou estudante de Análise e Desenvolvimento de Sistemas no IFPE. Sou dedicado e focado em aprendizado contínuo, sempre buscando aprimorar minhas habilidades. Minha principal stack inclui JavaScript, TypeScript, Node.js e PostgreSQL, com foco em criar aplicações modernas e escaláveis. Tenho experiência com testes automatizados usando Jest e trabalho com deploys eficientes através de Docker e práticas de CI/CD, garantindo entregas rápidas e seguras.',
     contact: 'Contato',
     buttonClipboard: 'Copiar para a área de transferência',
-    buttonRedirect: 'Redirecionar',
+    buttonRedirect: 'Redirecionado',
     education: {
       title: 'Formação Acadêmica',
       degrees: [

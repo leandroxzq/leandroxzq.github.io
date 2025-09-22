@@ -80,7 +80,7 @@ export default function About() {
                 transitionProps={{ transition: 'slide-up', duration: 300 }}
                 arrowOffset={10}
                 arrowSize={8}
-                offset={{ mainAxis: 0, crossAxis: 0 }}
+                offset={{ mainAxis: 20, crossAxis: 0 }}
                 withArrow
                 label={
                   <span className={`font-bold ${pressStart2P.className} text-[10px]`}>
